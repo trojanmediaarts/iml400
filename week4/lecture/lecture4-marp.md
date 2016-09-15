@@ -124,7 +124,10 @@ _this may break things; you can fix them during the assignment_
 
 ## Spirit Animal Refactor
 
-3) Name your CSS file `<your stormid>-spiritAnimal.css` _(omit the angle brackets)_
+3) Name your CSS file `<your stormid>.css` _(omit the angle brackets)_
+4) Name your HTML file `<your stormid>.html` _(omit the angle brackets)_
+	* Put your animals name in the title of your html document:
+		* e.g. `<title>Who Dat, esq.</title>` 	 	
 
 
 ---
