@@ -1,0 +1,195 @@
+/*
+ Purple theme adapted from:
+  http://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_theme_deep-purple
+
+  CSS Shape adapted from:
+  https://css-tricks.com/examples/ShapesOfCSS/  
+*/
+
+.prpl-theme {background-color:#673ab7}
+.prpl-light {background-color:#ede7f6 }
+.prpl-dark {background-color:#311b92 }
+.prpl-l5 {background-color:#ede7f6 }
+.prpl-l4 {background-color:#d1c4e9 }
+.prpl-l3 {background-color:#b39ddb }
+.prpl-l2 {background-color:#9575cd }
+.prpl-l1 {background-color:#7e57c2 }
+.prpl-d1 {background-color:#5e35b1 }
+.prpl-d2 {background-color:#512da8 }
+.prpl-d3 {background-color:#4527a0 }
+.prpl-d4 {background-color:#311b92 }
+.beige {background-color: beige}
+
+
+#container {
+  position:absolute;
+  width: 1000px;
+  overflow: hidden;
+}
+
+.grid {
+  background-image: url(../images/400x400Grid.png);
+  border-radius: 0%;
+}
+
+.cage {
+  position:relative; 
+  height: 300px;
+  margin: 0 auto 0 auto;
+  width: 300px;
+  border-radius: 40%;
+  background-color: beige;
+}
+
+
+.cage:hover {
+  background-color: aliceblue;
+}
+
+section {
+  position: absolute;
+/*   box-sizing: border-box; */
+}
+
+/* ------------------ */
+/*       Layout       */
+/* ------------------ */
+
+.body {
+  left: 50px;
+  top: 50px;
+  width: 200px;
+  height: 200px;
+}
+
+
+.body {  
+  /* firefox and safari
+  -moz-border-radius: 50px / 100px;
+  -webkit-border-radius: 50px / 100px; 
+  */
+
+  border-radius: 75px / 100px; /* horiz radius / vert radius */
+}
+
+.ear_L,.ear_R { top: 27px; }
+.ear_L { left: 50px; }
+.ear_R { left: 190px; }
+
+.ear_L,.ear_R {
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+}
+
+.ear_L {
+  border-left: 60px solid #9575cd; /*prpl-l2*/
+  border-bottom: 80px solid transparent;
+}
+
+.ear_R {  
+  border-right: 60px solid #9575cd; /*prpl-l2*/
+  border-bottom: 80px solid transparent;
+}
+
+
+.eye_L, .eye_R {
+  top: 90px;
+  width:70px;
+  height:70px;
+}
+
+/* position to leave 5px to the center line */
+.eye_L { left: 80px; }
+.eye_R { left: 150px; }
+
+
+.eye_L,.eye_R {
+  background-color: white;
+  border-radius: 35px ; /* width / 2.0 */
+}
+
+.pupil {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  background-color: #d1c4e9; /* prpl-l4 */
+  width: 40%;
+  height: 40%;
+}
+
+.pupil {  
+  border-radius: 50% ; /* width / 2.0 */
+}
+
+.beak {
+  top: 110px;
+  left: 143px;  
+/*   width: 14px; */
+/*   height: 60px; */  
+}
+
+.beak {
+  border-top: 60px solid goldenrod;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.wing_L, .wing_R {
+  display: block;
+  top: 120px;
+  background-color: #5e35b1; /* prpl-d1 */
+  background-color: #4527a0; /* prpl-d3 */
+  width: 30px;
+  height: 130px;
+/*   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; */
+  border-radius: 50% 50% 60% 60% / 90% 90% 50% 50%;
+}
+
+.wing_L {
+  left: 45px;
+}
+
+.wing_R {
+  left: 225px;
+}
+
+.leg_L,.leg_R {
+  background-color: goldenrod;
+  width: 10px;
+  height: 30px;
+  top: 240px;
+}
+
+.leg_L { left: 110px; }
+.leg_R { left: 190px; }
+
+
+
+.foot_L, .foot_R {
+  top: 250px;  
+  width: 0px;
+  height: 0px;
+  border: 7px solid transparent;
+  border-bottom: 10px solid darkred;
+/*   position: relative; */
+}
+
+.foot_L::after, .foot_R::after {
+  position: absolute;
+  content:'';
+  left: -7px; 
+  top: 10px;
+  width: 0px;
+  height: 0px;
+  border: 7px solid transparent;
+  border-top: 20px solid darkred;
+}
+
+.foot_L { left: 108px; 
+          -webkit-transform: rotate(0deg); 
+          -webkit-transform-origin: 0% 50%;
+}
+
+.foot_R { left: 188px; }
+
