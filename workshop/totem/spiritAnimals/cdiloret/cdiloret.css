@@ -1,0 +1,358 @@
+.tiger{
+    float: right;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin-top: 50px
+}
+
+.Rcheek {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-left: 100px solid #ff9900;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left: 240px;
+    position: absolute;
+}
+
+.Rcheek1 {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-left: 85px solid #000000;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left: 240px;
+    position: absolute;
+}
+
+.Rcheek2 {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-left: 70px solid #ff9900;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left: 240px;
+    position: absolute;
+}
+
+.Lcheek {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-right: 100px solid #ff9900;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left:-45px;
+    position:absolute;
+}
+
+.Lcheek1 {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-right: 85px solid #000000;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left:-25px;
+    position:absolute;  
+}
+
+.Lcheek2 {
+    width: 0;
+	height: 0;
+	border-top: 140px solid transparent;
+	border-right: 70px solid #ff9900;
+	border-bottom: 75px solid transparent;
+    margin-top:50px;
+    margin-left:-10px;
+    position:absolute;  
+}
+
+.face {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: #ff9900;
+    position: absolute;
+}
+
+.stripe1{
+    width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 10px solid #000000;
+    margin-left: 90px;
+    margin-top:25px;
+    position: absolute;
+}
+
+.stripe2{
+    width: 0;
+	height: 0;
+	border-left: 80px solid transparent;
+	border-right: 80px solid transparent;
+	border-bottom: 10px solid #000000;
+    margin-left: 70px;
+    margin-top:45px;
+    position: absolute;
+}
+
+.stripe3{
+    width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 10px solid #000000;
+    margin-left: 50px;
+    margin-top:65px;
+    position: absolute;
+}
+
+.nose {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 200px solid #ffc34d;
+    margin-left: 100px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+
+.nose2 {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 50px solid #663300;
+    margin-left: 100px;
+    margin-top: 220px;
+    position: absolute;
+}
+
+.nose3 {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 20px solid #ffc34d;
+    margin-left: 100px;
+    margin-top: 220px;
+    position: absolute;
+}
+
+.mouth {
+	width: 140px;
+	height: 100px;
+    margin-left: 80px;
+    margin-top:200px;
+	background: #ffeecc;
+	position: absolute;
+}
+.mouth:before {
+	content: "";
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-bottom: 40px solid #ffeecc;
+}
+.mouth:after {
+	content: "";
+	position: absolute;
+	bottom: -40px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-top: 40px solid #ffeecc;
+}
+	
+.mouth2 {
+    width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-bottom: 30px solid #000000;
+    margin-left: 80px;
+    margin-top: 270px;
+    position: absolute;
+}
+
+.mouth3 {
+    width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-bottom: 10px solid #ffeecc;
+    margin-left: 80px;
+    margin-top: 290px;
+    position: absolute;
+}
+
+.Reye {
+    width: 0;
+	height: 0;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	border-top: 20px solid #000000;
+    margin-left: 180px;
+    margin-top:115px;
+    position: absolute;
+}
+
+.Leye {
+    width: 0;
+	height: 0;
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	border-top: 20px solid #000000;
+    margin-left: 50px;
+    margin-top:115px;
+    position: absolute;
+}
+
+.Lear {
+    width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-bottom: 100px solid #ff9900;
+    margin-top: -20px;
+    margin-left: -35px;
+    transform: rotate(-40deg);
+    position:absolute;
+}
+
+.Rear {
+    width: 0;
+	height: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-top: 100px solid #ff9900;
+    margin-top: -20px;
+    margin-left: 200px;
+    transform: rotate(-140deg);
+    position:absolute;
+}
+
+.Linnerear {
+    width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 80px solid #ffeecc;
+    margin-top: 0px;
+    margin-left: -15px;
+    transform: rotate(-40deg);
+    position:absolute;
+}
+
+.Rinnerear {
+    width: 0;
+	height: 0;
+	border-left: 60px solid transparent;
+	border-right: 60px solid transparent;
+	border-bottom: 80px solid #ffeecc;
+    margin-top: 0px;
+    margin-left: 200px;
+    transform: rotate(40deg);
+    position:absolute;
+}
+
+
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400';
+
+body
+{
+    font-family: 'Lato', sans-serif;
+    font-weight:400;
+    font-size: 18px;
+}
+
+h1
+{
+    text-align: center;
+    font-weight:300;
+    color: #ffffff;
+    font-size: 32px;
+    line-height:20px;
+}
+
+h2
+{
+    text-align: center;
+    font-weight:400;
+    color: #000000;
+    font-size: 26px;
+    line-height:16px;
+}
+
+h3
+{
+    font-size: 22px;
+}
+
+nav ul
+{
+    display: block;
+    float:left;
+    text-align: left;
+    list-style: none;
+}
+
+main
+{
+    position: relative;
+    display: inline-block;
+}
+
+#banner
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color:rgb(253,94,83);
+}
+
+#sidebar
+{
+    clear: both;
+    float: left;
+}
+
+#wrapper
+{
+    float: right;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+/*link styling */
+nav ul a
+{
+    color: #000000;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 50px;
+}
+
+nav ul a:hover
+{
+    color:#d3d3d3;
+}
+
+nav ul a:active
+{
+    color:#ffff00;
+}
