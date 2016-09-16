@@ -38,4 +38,20 @@
             <div id="cdiloret-L_eye"></div>
         </div> 
      </body>
+     
+     <script>
+         
+         // this function will change both eye colors.
+         
+         function cdiloret_changeEyeColor(color)
+         {
+             var $R_eye = document.getElementById("cdiloret-R_eye")
+             var $L_eye = document.getElementById("cdiloret-L_eye")
+            $R_eye.style.borderTopColor = color
+            $L_eye.style.borderTopColor = color
+         }
+         
+         cdiloret_changeEyeColor("deeppink")
+    
+    </script>
 </html>
