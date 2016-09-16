@@ -109,7 +109,7 @@ section {
   border-radius: 35px ; /* width / 2.0 */
 }
 
-.pupil {
+#rspell-pupil-L, #rspell-pupil-R {
   position: absolute;
   left: 30%;
   top: 30%;
@@ -118,7 +118,7 @@ section {
   height: 40%;
 }
 
-.pupil {  
+#rspell-pupil-L, #rspell-pupil-R {  
   border-radius: 50% ; /* width / 2.0 */
 }
 
