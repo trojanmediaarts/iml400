@@ -1,12 +1,12 @@
-.tiger{
+#cdiloret-tiger{
     float: right;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     position: relative;
-    margin-top: 50px
+    margin-left: 100px;
 }
 
-.Rcheek {
+#cdiloret-R_cheek {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -17,7 +17,7 @@
     position: absolute;
 }
 
-.Rcheek1 {
+#cdiloret-R_cheek1 {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -28,7 +28,7 @@
     position: absolute;
 }
 
-.Rcheek2 {
+#cdiloret-R_cheek2 {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -39,7 +39,7 @@
     position: absolute;
 }
 
-.Lcheek {
+#cdiloret-L_cheek {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -50,7 +50,7 @@
     position:absolute;
 }
 
-.Lcheek1 {
+#cdiloret-L_cheek1 {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -61,7 +61,7 @@
     position:absolute;  
 }
 
-.Lcheek2 {
+#cdiloret-L_cheek2 {
     width: 0;
 	height: 0;
 	border-top: 140px solid transparent;
@@ -72,7 +72,7 @@
     position:absolute;  
 }
 
-.face {
+#cdiloret-face {
     height: 300px;
     width: 300px;
     border-radius: 50%;
@@ -80,7 +80,7 @@
     position: absolute;
 }
 
-.stripe1{
+#stripe1{
     width: 0;
 	height: 0;
 	border-left: 60px solid transparent;
@@ -91,7 +91,7 @@
     position: absolute;
 }
 
-.stripe2{
+#cdiloret-stripe2{
     width: 0;
 	height: 0;
 	border-left: 80px solid transparent;
@@ -102,7 +102,7 @@
     position: absolute;
 }
 
-.stripe3{
+#cdiloret-stripe3{
     width: 0;
 	height: 0;
 	border-left: 100px solid transparent;
@@ -113,7 +113,7 @@
     position: absolute;
 }
 
-.nose {
+#cdiloret-nose {
 	width: 0;
 	height: 0;
 	border-left: 50px solid transparent;
@@ -125,7 +125,7 @@
 }
 
 
-.nose2 {
+#cdiloret-nose2 {
 	width: 0;
 	height: 0;
 	border-left: 50px solid transparent;
@@ -136,7 +136,7 @@
     position: absolute;
 }
 
-.nose3 {
+#cdiloret-nose3 {
 	width: 0;
 	height: 0;
 	border-left: 50px solid transparent;
@@ -147,7 +147,7 @@
     position: absolute;
 }
 
-.mouth {
+#cdiloret-mouth {
 	width: 140px;
 	height: 100px;
     margin-left: 80px;
@@ -155,7 +155,7 @@
 	background: #ffeecc;
 	position: absolute;
 }
-.mouth:before {
+#cdiloret-mouth:before {
 	content: "";
 	position: absolute;
 	top: -40px;
@@ -166,7 +166,7 @@
 	border-right: 70px solid transparent;
 	border-bottom: 40px solid #ffeecc;
 }
-.mouth:after {
+#cdiloret-mouth:after {
 	content: "";
 	position: absolute;
 	bottom: -40px;
@@ -178,7 +178,7 @@
 	border-top: 40px solid #ffeecc;
 }
 	
-.mouth2 {
+#cdiloret-mouth2 {
     width: 0;
 	height: 0;
 	border-left: 70px solid transparent;
@@ -189,7 +189,7 @@
     position: absolute;
 }
 
-.mouth3 {
+#cdiloret-mouth3 {
     width: 0;
 	height: 0;
 	border-left: 70px solid transparent;
@@ -200,7 +200,7 @@
     position: absolute;
 }
 
-.Reye {
+#cdiloret-R_eye {
     width: 0;
 	height: 0;
 	border-left: 35px solid transparent;
@@ -211,7 +211,7 @@
     position: absolute;
 }
 
-.Leye {
+#cdiloret-L_eye {
     width: 0;
 	height: 0;
 	border-left: 35px solid transparent;
@@ -222,7 +222,7 @@
     position: absolute;
 }
 
-.Lear {
+#cdiloret-L_ear {
     width: 0;
 	height: 0;
 	border-left: 70px solid transparent;
@@ -234,7 +234,7 @@
     position:absolute;
 }
 
-.Rear {
+#cdiloret-R_ear {
     width: 0;
 	height: 0;
 	border-left: 70px solid transparent;
@@ -246,7 +246,7 @@
     position:absolute;
 }
 
-.Linnerear {
+#cdiloret-L_innerear {
     width: 0;
 	height: 0;
 	border-left: 60px solid transparent;
@@ -258,7 +258,7 @@
     position:absolute;
 }
 
-.Rinnerear {
+#cdiloret-R_innerear {
     width: 0;
 	height: 0;
 	border-left: 60px solid transparent;
@@ -268,91 +268,4 @@
     margin-left: 200px;
     transform: rotate(40deg);
     position:absolute;
-}
-
-
-@import 'https://fonts.googleapis.com/css?family=Lato:300,400';
-
-body
-{
-    font-family: 'Lato', sans-serif;
-    font-weight:400;
-    font-size: 18px;
-}
-
-h1
-{
-    text-align: center;
-    font-weight:300;
-    color: #ffffff;
-    font-size: 32px;
-    line-height:20px;
-}
-
-h2
-{
-    text-align: center;
-    font-weight:400;
-    color: #000000;
-    font-size: 26px;
-    line-height:16px;
-}
-
-h3
-{
-    font-size: 22px;
-}
-
-nav ul
-{
-    display: block;
-    float:left;
-    text-align: left;
-    list-style: none;
-}
-
-main
-{
-    position: relative;
-    display: inline-block;
-}
-
-#banner
-{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color:rgb(253,94,83);
-}
-
-#sidebar
-{
-    clear: both;
-    float: left;
-}
-
-#wrapper
-{
-    float: right;
-    padding-right: 50px;
-    padding-left: 50px;
-}
-
-/*link styling */
-nav ul a
-{
-    color: #000000;
-    text-decoration: none;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 50px;
-}
-
-nav ul a:hover
-{
-    color:#d3d3d3;
-}
-
-nav ul a:active
-{
-    color:#ffff00;
 }
