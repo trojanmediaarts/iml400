@@ -1,4 +1,4 @@
-.cageGrid {
+.bowman-cageGrid {
 
 		position:absolute; 
 		height: 300px;
@@ -10,7 +10,7 @@
 
 
 
-#hairCircle {
+#bowman-hairCircle {
 	width: 280px;
 	height: 280px;
 	background: #CD853F;
@@ -21,7 +21,7 @@
   z-index:-1;
 }
 
-#innerCircle {
+#bowman-innerCircle {
 	width: 200px;
 	height: 200px;
 	background: #D2B48C;
@@ -34,7 +34,7 @@
   z-index:0;
 }
 
-#snout {
+#bowman-snout {
 	border-bottom: 100px solid #D2B48C;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
@@ -47,7 +47,7 @@
   left: 87px;
 }
 
-#centerNose {
+#bowman-centerNose {
 	width: 0;
 	height: 0;
 	border: 6px solid transparent;
@@ -58,7 +58,7 @@
   z-index:2;
 }
 
-#centerNose:after {
+#bowman-centerNose:after {
 	content: '';
 	position: absolute;
 	left: -6px; top: 20px;
@@ -68,7 +68,7 @@
 	border-top: 50px solid #8B4513;
 }
 
-#leftEye {
+#bowman-leftEye {
 	width: 0;
 	height: 0;
 	border: 6px solid transparent;
@@ -79,7 +79,7 @@
   z-index:2;
 }
 
-#leftEye:after {
+#bowman-leftEye:after {
 	content: '';
 	position: absolute;
 	left: -6px; top: 20px;
@@ -89,14 +89,14 @@
 	border-top: 5px solid black;
 }
 
-#leftEyeRotate  {
+#bowman-leftEyeRotate  {
  position: absolute;
  left:-280px;
  top:200px;
  transform: rotate(-45deg);
 }
 
-#rightEye {
+#bowman-rightEye {
 	width: 0;
 	height: 0;
 	border: 6px solid transparent;
@@ -107,7 +107,7 @@
   z-index:2;
 }
 
-#rightEye:after {
+#bowman-rightEye:after {
 	content: '';
 	position: absolute;
 	left: -6px; top: 20px;
@@ -117,14 +117,14 @@
 	border-top: 5px solid black;
 }
 
-#rightEyeRotate  {
+#bowman-rightEyeRotate  {
  position: absolute;
  left:135px;
  top:-225px;
  transform: rotate(45deg);
 }
 
-#widowsPeak {
+#bowman-widowsPeak {
 	width: 0;
 	height: 0;
 	border: 6px solid transparent;
@@ -135,7 +135,7 @@
   z-index:2;
 }
 
-#widowsPeak:after {
+#bowman-widowsPeak:after {
 	content: '';
 	position: absolute;
 	left: -6px; top: 20px;
@@ -147,7 +147,7 @@
 
 
 
-#bottomJaw {
+#bowman-bottomJaw {
 	border-bottom: 35px solid #CD853F;
 	border-left: 40px solid transparent;
 	border-right: 40px solid transparent;
@@ -160,7 +160,7 @@
 }
 
 
-#hairOutline {
+#bowman-hairOutline {
     background: #8B4513;
     width: 250px;
     height: 250px;
@@ -172,7 +172,7 @@
     top: 15px
 }
 
-#hairOutline:before, #hairOutline:after {
+#bowman-hairOutline:before, #bowman-hairOutline:after {
     content: "";
     position: absolute;
     top: 0;
@@ -182,20 +182,20 @@
     background: #8B4513;
 }
 
-#hairOutline:before {
+#bowman-hairOutline:before {
     -webkit-transform: rotate(30deg);
        -moz-transform: rotate(30deg);
         -ms-transform: rotate(30deg);
          -o-transform: rotate(30deg);
 }
-#hairOutline:after {
+#bowman-hairOutline:after {
     -webkit-transform: rotate(60deg);
        -moz-transform: rotate(60deg);
         -ms-transform: rotate(60deg);
          -o-transform: rotate(60deg);
 }
 
-#hidingSquare {
+#bowman-hidingSquare {
 	width: 300px;
 	height: 100px;
 	background: white;
