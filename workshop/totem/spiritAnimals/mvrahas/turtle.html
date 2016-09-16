@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="turtleStyle.css">
 </head>
 <body>
-  <div id="wrapper">
+  <div id="cage">
     <div id="shell"></div>
     <div id="shellInner"></div>
     <div id="pattern">
@@ -33,4 +33,12 @@
     <div class="leg2" id="rightBack"></div>
     <div class="leg1" id="leftBack"></div>
   </div>
+  <script text="text/javascript">
+    /*This function changes the shell color*/
+    function mvrahas_changeShellColor(hue) {
+      var $shell = document.getElementById("shell")
+      $shell.style.backgroundColor = hue
+    }
+    mvrahas_changeShellColor("skyblue")    
+  </script>
 </body>
