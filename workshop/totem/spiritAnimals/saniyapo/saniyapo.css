@@ -1,36 +1,38 @@
 /*turtle css*/
 
-.turtleContainer {
+#turtleContainer {
 	display: inline-block;
 	width: 300px;
 	height: 300px;
-	background-color: #1693a5;
-	float: right;
-	margin-top: 2em;
-	margin-right: 10%;
+	background-color: transparent;
 	position: relative;
 }
 
-.turtleBody {
+#saniyapo-Body{
 	display: inline-block;
 	width: 200px;
 	height: 200px;
-	background-color: #CFFFDD;
 	border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
 	-webkit-border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	-webkit-transform: rotate(90deg);
 	position: absolute;
 	margin-top: 50px;
 	margin-left: 50px;
+	/* This pattern for the scales was borrowed from http://lea.verou.me/css3patterns/#microbial-mat since I had no clue how to get the exact shapes*/
+	background:
+	radial-gradient(circle at 0% 50%, rgba(127, 255, 36, 0) 9px, #CFFFDD 10px, rgba(127, 255, 36, 0) 11px) 0px 10px,
+	radial-gradient(at 100% 100%, rgba(127, 255, 36, 0) 9px, #CFFFDD 10px, rgba(127, 255, 36, 0) 11px), #1693a5;
+	background-size: 20px 20px;
 }
 
-.turtleHead {
+
+#saniyapo-Head{
 	display: inline-block;
 	width: 60px;
 	height: 60px;
 	background-color: #CFFFDD;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
 	-webkit-border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
 	-webkit-transform: rotate(-90deg);
@@ -39,12 +41,33 @@
 	margin-left: 45px;
 }
 
-.turtleHand {
+#saniyapo-Eye_L {
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: #00cdac;
+	position: absolute;
+	bottom: 45px;
+	left:30px;
+
+}
+
+#saniyapo-Eye_R {
+	height: 10px;
+	width: 10px;
+	border-radius: 50%;
+	background-color: #00cdac;
+	position: absolute;
+	bottom: 30px;
+	left: 45px;
+}
+
+#saniyapo-Hand_L {
 	display: inline-block;
 	width: 30px;
 	height: 45px;
 	background-color: #CFFFDD;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	border-radius: 55% 50% 80% 0/80% 50% 80% 0;
 	-webkit-border-radius: 55% 50% 80% 0/80% 50% 80% 0;
 	-webkit-transform: rotate(35deg);
@@ -53,12 +76,12 @@
 	left: 30px;
 }
 
-.turtleHandTwo {
+#saniyapo-Hand_R {
 	display: inline-block;
 	width: 30px;
 	height: 45px;
 	background-color: #CFFFDD;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	border-radius: 50% 60% 0 80%/60% 75% 5% 60%;
 	-webkit-border-radius: 50% 60% 0 80%/60% 75% 5% 60%;
 	-webkit-transform: rotate(-125deg);
@@ -67,12 +90,12 @@
 	right: 85px;
 }
 
-.turtleFoot {
+#saniyapo-Foot_L {
 	display: inline-block;
 	width: 30px;
 	height: 50px;
 	background-color: #CFFFDD;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	border-radius: 50% 60% 0 90%/75% 70% 0 60%;
 	-webkit-border-radius: 50% 60% 0 90%/75% 70% 0 60%;
 	-webkit-transform: rotate(0deg);
@@ -81,12 +104,12 @@
 	left: 140px;
 }
 
-.turtleFootTwo {
+#saniyapo-Foot_R {
 	display: inline-block;
 	width: 30px;
 	height: 50px;
 	background-color: #CFFFDD;
-	border: 2px solid #7fff24;
+	border: 2px solid #fff;
 	border-radius: 50% 60% 90% 0/75% 70% 60% 0;
 	-webkit-border-radius: 50% 60% 90% 0/75% 70% 60% 0;
 	-webkit-transform: rotate(-75deg);

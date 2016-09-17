@@ -6,21 +6,102 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content ="Saniya Pole">
 		<meta name="description" content="Media Arts And Practice | USC">
-		<meta name="revised" content="9/1/2016">
+		<meta name="revised" content="9/17/2016">
 		<link rel="stylesheet" type="text/css" href="saniyapo.css">
 
 	</head>
 
 	<body>
-		<div class="turtleContainer">
-			<div class="turtleHead turtle"></div>
-			<div class="turtleHand turtle"></div>
-			<div class="turtleHandTwo turtle"></div>
-			<div class="turtleFoot turtle"></div>
-			<div class="turtleFootTwo turtle"></div>
-			<div class="turtleBody turtle"></div>	
+		<div id="turtleContainer">
+			<div id="saniyapo-Head">
+				<div id="saniyapo-Eye_L"></div>
+				<div id="saniyapo-Eye_R"></div>
+			</div>
+			<div id="saniyapo-Hand_L"></div>
+			<div id="saniyapo-Hand_R"></div>
+			<div id="saniyapo-Foot_L"></div>
+			<div id="saniyapo-Foot_R"></div>
+			<div id="saniyapo-Body">
+			</div>	
 		</div>
-		<footer>
+
+
+		<script type="text/javascript">
+		
+		console.log('Can you see this?')
+
+			// FIRST FUNCTION 
+			//Changing the eye color of the turtle
+
+		function saniyapoChangeTurtle_1(eyeColor) {
+
+ 			var $Eye_L = document.getElementById("saniyapo-Eye_L")
+ 			var $Eye_R = document.getElementById("saniyapo-Eye_R")
+
+			$Eye_L.style.backgroundColor= eyeColor
+			$Eye_R.style.backgroundColor= eyeColor
+
+		}
+
+		// Run this function and change the color to the one you want
+		//saniyapoChangeTurtle_1("rgb(255,31,76)")
+
+		//SECOND FUNCTION
+		//Changing color of the turtle's head, arms and legs
+
+		function saniyapoChangeTurtle_2(limbsColor) {
+
+			var $Hand_L = document.getElementById("saniyapo-Hand_L")
+			var $Hand_R = document.getElementById("saniyapo-Hand_R")
+			var $Foot_L = document.getElementById("saniyapo-Foot_L")
+			var $Foot_R = document.getElementById("saniyapo-Foot_R")
+			var $Head = document.getElementById("saniyapo-Head")
 			
-		</footer>
+			$Hand_L.style.backgroundColor = limbsColor
+			$Hand_R.style.backgroundColor = limbsColor
+			$Foot_L.style.backgroundColor = limbsColor
+			$Foot_R.style.backgroundColor = limbsColor
+			$Head.style.backgroundColor = limbsColor
+		}
+
+		// Run this to change limbs
+		//saniyapoChangeTurtle_2("rgb(200,217,243)")
+
+		//THIRD FUNCTION
+		//Changing the border width AND color for the whole turtle and each of its limbs
+		//Note that the original border color is white, so it will not be visible unless you change the container bg color or put it on top of your totem that is colored differently
+
+		function saniyapoChangeTurtle_3(myBorderWidth, myBorderColor) {
+
+			var $Hand_L = document.getElementById("saniyapo-Hand_L")
+			var $Hand_R = document.getElementById("saniyapo-Hand_R")
+			var $Foot_L = document.getElementById("saniyapo-Foot_L")
+			var $Foot_R = document.getElementById("saniyapo-Foot_R")
+			var $Head = document.getElementById("saniyapo-Head")
+			var $Body = document.getElementById("saniyapo-Body")
+
+			$Hand_L.style.borderWidth =myBorderWidth
+			$Hand_L.style.borderColor =myBorderColor
+
+			$Hand_R.style.borderWidth =myBorderWidth
+			$Hand_R.style.borderColor =myBorderColor
+
+			$Foot_L.style.borderWidth =myBorderWidth
+			$Foot_L.style.borderColor =myBorderColor
+
+			$Foot_R.style.borderWidth =myBorderWidth
+			$Foot_R.style.borderColor =myBorderColor
+
+			$Head.style.borderWidth =myBorderWidth
+			$Head.style.borderColor =myBorderColor
+
+			$Body.style.borderWidth =myBorderWidth
+			$Body.style.borderColor =myBorderColor
+
+		}
+
+		//Run this to change the border width and color. The first number is representing border width in pixels
+		//The second represents the color, you can use RGB values or a hexcode or just a name
+		//saniyapoChangeTurtle_3("5", "black")
+		</script>
 	</body>
