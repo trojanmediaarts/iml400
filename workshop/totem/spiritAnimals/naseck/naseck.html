@@ -10,45 +10,36 @@
 		<meta name=”viewport” content=”width=device-width, initial-scale=1”>
    
 </head>
-<body>
-    <div id="wrapper">
-			<header class="banner" id="banner">
-				<h1>Max Naseck</h1>
-				<h2>IML 400</h2>
-			</header>
-<nav>
-    <header class="navigation">
-        <h3><a href="../index.html">Home</a></h3>
-        <h3><a href="about.html">About/Spirit Animal</a></h3>
-        <h3><a href="week2flow.html">Week 2 Flow Charts</a></h3>
-    </header>
-</nav>
-
-<main>  
-    <p>The quiz states:<br><br>
-
-<i>When you have the deer as spirit animal, you are highly sensitive and have a strong intuition. By affinity with this animal, you have the power to deal with challenges with grace. You master the art of being both determined and gentle in your approach. The deer totem wisdom imparts those with a special connection with this animal with the ability to be vigilant, move quickly, and trust their instincts to get out the trickiest situations.</i> <br><br>
-
-I think that this spirit animal is for the most part pretty fitting. Nevertheless, I can definitely be aggressive in approaching challenges, and I also do not see myself as timid as a deer. <br><br>
-
-Besides taking this class as a MAP requirement, I think that this class will be very crucial to the development of my knowledge and skills in coding for the web. I look forward to learning more about Javascript and JQuery, and I also hope to refine my skills in HTML. 
-    </p>
 
 <div id="deer">
-					<div id="head"></div>
-					<div id="neck"></div>
-					<div id="body"></div>
-					<div id="leg1"></div>
-					<div id="leg2"></div>
-    </div>
-  </main>
-   
-
-    </div>
+					<div id="naseck-head"></div>
+					<div id="naseck-nose"></div>
+					<div id="naseck-eye-L"></div>
+					<div id="naseck-eye-R"></div>
+					<div id="naseck-pupil-L"></div>
+					<div id="naseck-pupil-R"></div>
+					<div id="naseck-ear-R"></div>
+					<div id="naseck-ear-L"></div>
+					<div id="naseck-earinside-R"></div>
+					<div id="naseck-earinside-L"></div>
+		</div>
     
 </body>
-<footer>
-        <p>copyright <abbr title="Media Arts + Practice, University of Southern california">MA+P</abbr> Studio 2016
-        </p>
-    </footer>	
+
+<script text="text/javascript">
+	console.log('this is working...')
+
+	function rspell_changeEyeColor ( myColor) {
+
+	var $pupil = document.getElementById("rspell-pupil")
+	$pupil.style.backgroundColor = myColor 
+
+	}
+
+	rspell_changeEyeColor( "deeppink")
+	
+
+</script>
+
+
 </html>
