@@ -78,10 +78,6 @@ div.desc {
     text-align: center;
 }
 
-body {
-    
-}
-
 #header{
     font-family: sans-serif;
     
@@ -157,7 +153,20 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-radius: 40%; 
   background-color: orange;
 }
-
+.beak {
+  position: absolute; 
+  top: 190px;
+  left: 190px;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid green;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
 .pupil_L {
   position: absolute; 
   left: 38.5%; 
@@ -205,7 +214,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 .Owlbody {
   position: absolute;
-  top: 190px;
+  top: 200px;
   left: 120px; 
   width: 0px;
   height: 0px;
@@ -221,7 +230,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   background-color: #003153 ; 
  width: 10px;
 	height: 40px;
-  position:       relative;
+  position: absolute;
   top: 260px;
   left: 185px; 
 }
@@ -230,15 +239,15 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   background-color: #003153; 
  width: 10px;
 	height: 40px;
-   position:       relative;
-  top: 220px;
+   position: absolute;
+  top: 260px;
   left: 205px; 
 	background: 
 }
 
 .wing_L{
-  position:       relative; 
-  top: 120px;
+  position: absolute; 
+  top: 200px;
   left: 140px; 
   width: 0;
   height: 0;
@@ -252,8 +261,8 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 }
 
 .wing_R{
-  position: relative; 
-  top: 20px;
+  position: absolute; 
+  top: 200px;
   left: 225px; 
   width: 0;
   height: 0;
@@ -267,8 +276,8 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 }
 
 .head {
-    position: relative;
-  top: -150px; 
+    position: absolute;
+  top: 120px; 
   left: 135px; 
   	width: 130px;
 	height: 125px;
@@ -314,20 +323,6 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   height:0;
   border: 10px solid transparent;
   border-top:10px solid green; 
-}
-
-.beak {
-  position: absolute; 
-  top: 190px;
-  left: 110px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 20px solid green;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
 }
 
 /* End of OWL Div*/ 
