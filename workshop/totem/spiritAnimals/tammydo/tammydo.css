@@ -142,7 +142,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   overflow: scroll; 
 }
 
-.case {
+#case {
   position: relative; 
   display: inline-block;
   max-width: 400px;
@@ -153,7 +153,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-radius: 40%; 
   background-color: orange;
 }
-.beak {
+#tammydo_beak {
   position: absolute; 
   top: 190px;
   left: 190px;
@@ -167,7 +167,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-.pupil_L {
+#tammydo_pupil_L {
   position: absolute; 
   left: 38.5%; 
   top: 44%; 
@@ -179,7 +179,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 	border-radius: 50px;
 }
 
-.pupil_R {
+#tammydo_pupil_R {
   position: absolute;
   top: 44%;
   left: 54%;
@@ -191,19 +191,19 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 	border-radius: 50px;
 }
 
-.eye_L {
+#tammydo_eye_L {
   position: absolute; 
   top: 40%; 
   left: 200px;
 }
 
-.eye_R {
+#tammydo_eye_R {
   position: absolute;
   top: 40%;
   left: 140px;
 }
 
-.eye_L, .eye_R{
+#tammydo_eye_L, #tammydo_eye_R{
   width: 60px;
   height: 60px;
   background: silver; 
@@ -212,7 +212,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-radius:50px; 
 }
 
-.Owlbody {
+#tammydo_Owlbody {
   position: absolute;
   top: 200px;
   left: 120px; 
@@ -226,7 +226,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-radius: 60%;
 }
 
-.leg_L {
+#tammydo_leg_L {
   background-color: #003153 ; 
  width: 10px;
 	height: 40px;
@@ -235,7 +235,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   left: 185px; 
 }
 
-.leg_R {
+#tammydo_leg_R {
   background-color: #003153; 
  width: 10px;
 	height: 40px;
@@ -245,7 +245,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 	background: 
 }
 
-.wing_L{
+#tammydo_wing_L {
   position: absolute; 
   top: 200px;
   left: 140px; 
@@ -260,7 +260,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-radius: 50%;
 }
 
-.wing_R{
+#tammydo_wing_R{
   position: absolute; 
   top: 200px;
   left: 225px; 
@@ -275,7 +275,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   
 }
 
-.head {
+#tammydo_head {
     position: absolute;
   top: 120px; 
   left: 135px; 
@@ -287,16 +287,16 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 	border-radius: 50px;
 }
 
-.foot_L {
+#tammydo_foot_L {
   width: 0;
   height:0;
   border: 50px solid transparent;
   border-bottom: 70px solid green;
-  position: relative;
+  position: absolute;
   top:-50px; 
 }
 
-.foot_L {
+#tammydo_foot_L {
   content: '';
   position: absolute;
   left: 200px; top: 300px;
@@ -306,16 +306,16 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
   border-top:10px solid green; 
 }
 
-.foot_R {
+#tammydo_foot_R {
   width: 0;
   height:0;
   border: 50px solid transparent;
   border-bottom: 70px solid green;
-  position: relative;
+  position: absolute;
   top:-50px; 
 }
 
-.foot_R {
+#tammydo_foot_R {
   content: '';
   position: absolute;
   left: 180px; top: 300px;
