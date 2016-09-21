@@ -5,7 +5,7 @@
   <!-- title and meta -->
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1.0" name="viewport">
-  <meta content="description" name="Css Turtle">
+  <meta content="description" name="Spirit Animal">
   <title>Turtle</title>
 
   <!-- css -->
@@ -13,32 +13,48 @@
 </head>
 <body>
   <div id="cage">
+    <div id="neck"></div>
+    <div id="head"></div>
+    <div class="eye" id="eyeL"></div>
+    <div class="eye" id="eyeR"></div>
+    <div class="leg1" id="frontR"></div>
+    <div class="leg2" id="frontL"></div>
+    <div class="leg2" id="backR"></div>
+    <div class="leg1" id="backL"></div>
     <div id="shell"></div>
     <div id="shellInner"></div>
     <div id="pattern">
-      <div id="hex1"><div id="hexagon"></div></div>
-      <div id="hex2"><div id="hexagon"></div></div>
-      <div id="hex3"><div id="hexagon"></div></div>
-      <div id="hex4"><div id="hexagon"></div></div>
-      <div id="hex5"><div id="hexagon"></div></div>
-      <div id="hex6"><div id="hexagon"></div></div>
-      <div id="hex7"><div id="hexagon"></div></div>
+      <div id="hex1"><div class="hexagon"></div></div>
+      <div id="hex2"><div class="hexagon"></div></div>
+      <div id="hex3"><div class="hexagon"></div></div>
+      <div id="hex4"><div class="hexagon"></div></div>
+      <div id="hex5"><div class="hexagon"></div></div>
+      <div id="hex6"><div class="hexagon"></div></div>
+      <div id="hex7"><div class="hexagon"></div></div>
     </div>
-    <div id="neck"></div>
-    <div id="head"></div>
-    <div class="eye" id="eye1"></div>
-    <div class="eye" id="eye2"></div>
-    <div class="leg1" id="rightFront"></div>
-    <div class="leg2" id="leftFront"></div>
-    <div class="leg2" id="rightBack"></div>
-    <div class="leg1" id="leftBack"></div>
+    
   </div>
   <script text="text/javascript">
-    /*This function changes the shell color*/
-    function mvrahas_changeShellColor(hue) {
+    /*This function changes the outer border of the shell to a color of your choice 
+
+    mvrahasChangeAnimal_1("red")
+    */
+    function mvrahasChangeAnimal_1(hue) {
       var $shell = document.getElementById("shell")
       $shell.style.backgroundColor = hue
     }
-    mvrahas_changeShellColor("skyblue")    
+    /*This function changes the hexogons on the shell to a color of your choice 
+
+    mvrahasChangeAnimal_2("red")
+    */
+    function mvrahasChangeAnimal_2(hue) {
+      var $hexagon = document.getElementsByClassName("hexagon")
+      console.log($hexagon.length)
+      for(i=0 ; i<$hexagon.length ; i++){
+      $hexagon[i].style.backgroundColor = hue
+      $hexagon[i].style.color = hue
+    }
+    }
+    
   </script>
 </body>
