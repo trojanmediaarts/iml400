@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <!-- title and meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1.0" name="viewport">
+  <meta content="description" name="Spirit Animal">
+  <title>Totem</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="turtleStyle.css">
+  <link rel="stylesheet" href="yedamkim.css">
+  <link rel="stylesheet" href="tammydo.css">
+  <link rel="stylesheet" type="text/css" href="saniyapo.css">
+
+</head>
+<body>
+  <div id="mvrahas-cage">
+    <div id="mvrahas-neck"></div>
+    <div id="mvrahas-head"></div>
+    <div class="mvrahas-eye" id="mvrahas-eyeL"></div>
+    <div class="mvrahas-eye" id="mvrahas-eyeR"></div>
+    <div class="mvrahas-leg1" id="mvrahas-frontR"></div>
+    <div class="mvrahas-leg2" id="mvrahas-frontL"></div>
+    <div class="mvrahas-leg2" id="mvrahas-backR"></div>
+    <div class="mvrahas-leg1" id="mvrahas-backL"></div>
+    <div id="mvrahas-shell"></div>
+    <div id="mvrahas-shellInner"></div>
+    <div id="mvrahas-pattern">
+      <div id="mvrahas-hex1"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex2"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex3"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex4"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex5"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex6"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex7"><div class="mvrahas-hexagon"></div></div>
+    </div>
+   </div>
+    <div id = "container">
+        <div class="yedamkim-shape">
+          <div id="yedamkim-rightear"></div>
+          <div id="yedamkim-leftear"></div>
+          <div id="yedamkim-leftcheek"></div>
+          <div id="yedamkim-rightcheek"></div>
+          <div id="yedamkim-triangle-down"></div>
+          <div id="yedamkim-mouth"></div>
+          <div id="yedamkim-nose"></div>
+          <div id="yedamkim-nose2"></div>
+          <div id="yedamkim-whiteeyebrows"></div>
+          <div id="yedamkim-whiteeyebrows2"></div>
+          <div id="yedamkim-trapezoid"></div>
+          <div id="yedamkim-leftear2"></div>
+          <div id="yedamkim-leftear3"></div>
+          <div id="yedamkim-rightear2"></div>
+          <div id="yedamkim-rightear3"></div>
+          <div id="yedamkim-lefteye"></div>
+          <div id="yedamkim-righteye"></div>
+          <div id="yedamkim-stripes"></div>
+          <div id="yedamkim-stripes2"></div>
+        </div>
+    </div>
+    <div id="case">
+      <section id="tammydo_leg_L"></section>
+      <section id="tammydo_leg_R"></section>
+      <section id="tammydo_Owlbody"></section>
+      <section id="tammydo_wing_L"></section>
+      <section id="tammydo_wing_R"></section>
+      <section id="tammydo_ear_L"></section>
+      <section class="tammydo_ear_R"></section> 
+      <section id="tammydo_head"></section> 
+      <section id="tammydo_beak"></section> 
+      <section id="tammydo_eye_L"></section> 
+      <section id="tammydo_eye_R"></section>
+      <section id="tammydo_pupil_L"></section>
+      <section id="tammydo_pupil_R"></section>  
+      <section id="tammydo_foot_L"></section>
+      <section id="tammydo_foot_R"></section>
+    </div>
+    <div id="turtleContainer">
+      <div id="saniyapo-Head">
+        <div id="saniyapo-Eye_L"></div>
+        <div id="saniyapo-Eye_R"></div>
+      </div>
+      <div id="saniyapo-Hand_L"></div>
+      <div id="saniyapo-Hand_R"></div>
+      <div id="saniyapo-Foot_L"></div>
+      <div id="saniyapo-Foot_R"></div>
+      <div id="saniyapo-Body">
+      </div>  
+    </div> 
+</body>
+<script text = "text/javascript">
+  
+  function yedamkim_changeStripesColor(){
+  var $topStripe = document.getElementById("yedamkim-stripes")
+  var $bottomStripe = document.getElementById("yedamkim-stripes2")
+  $topStripe.style.backgroundColor = "red" <!--change the color here--> 
+  $bottomStripe.style.backgroundColor = "red" <!--change the color here--> 
+  }
+  yedamkim_changeStripesColor()
+
+  function tammydoChangeAnimal_3 (BodyColor) {
+    var $OwlBody = document.getElementById("tammydo_Owlbody")
+    $OwlBody.style.backgroundColor = BodyColor
+  }
+  tammydoChangeAnimal_3 ("purple")
+
+  function tammydoChangeAnimal_2 (EyeColor) {
+    var $pupil_L = document.getElementById("tammydo_pupil_L")
+    var $pupil_R = document.geELementById("tammydo_pupil_R")
+    $pupil_L.style.backgroundColor = EyeColor
+    $pupil_R.style.backgroundColor = EyeColor
+  }
+  tammydoChangeAnimal_2 ("purple")
+
+  function saniyapoChangeTurtle_1(eyeColor) {
+    var $Eye_L = document.getElementById("saniyapo-Eye_L")
+    var $Eye_R = document.getElementById("saniyapo-Eye_R")
+    $Eye_L.style.backgroundColor= eyeColor
+    $Eye_R.style.backgroundColor= eyeColor
+  }
+  saniyapoChangeTurtle_1("red")
+</script>
+</body>
