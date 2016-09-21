@@ -1,5 +1,15 @@
 
 
+/*I've set my tiger on the center, but if you'd like to place it elsewhere, 
+just change the padding left or top according to your liking*/
+.yedamkim-shape {
+	padding-top:100px;
+	padding-left: 550px;
+	text-align: center;
+	position: relative;
+	
+}
+
 #yedamkim-atiger {
 	text-align: center;
 	position:absolute;
@@ -63,13 +73,6 @@
 	margin-left: 80px;
 }
 
-.yedamkim-shape {
-	padding-top:100px;
-	padding-left: 550px;
-	text-align: center;
-	position: relative;
-	
-}
 
 
 
