@@ -1,0 +1,206 @@
+
+
+
+/*
+
+    OWL DIV 
+
+ Indigo color theme from:
+  http://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_theme_indigo
+
+  CSS Shape adapted from:
+  https://css-tricks.com/examples/ShapesOfCSS/ 
+
+Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW 
+*/
+
+
+#case {
+  position: relative; 
+  display: inline-block;
+  max-width: 400px;
+  min-width: 400px; 
+  height: 400px; 
+  float: left; 
+  margin: 5px; 
+  border-radius: 40%; 
+  background-color: orange;
+  position: absolute;
+  top: 545px;
+  right: 565px;
+}
+#tammydo_beak {
+  position: absolute; 
+  top: 190px;
+  left: 190px;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid green;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+#tammydo_pupil_L {
+  position: absolute; 
+  left: 38.5%; 
+  top: 44%; 
+  width: 30px;
+	height: 30px;
+	background: #003153 ;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#tammydo_pupil_R {
+  position: absolute;
+  top: 44%;
+  left: 54%;
+  width: 30px;
+	height: 30px;
+	background: #003153;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#tammydo_eye_L {
+  position: absolute; 
+  top: 40%; 
+  left: 200px;
+}
+
+#tammydo_eye_R {
+  position: absolute;
+  top: 40%;
+  left: 140px;
+}
+
+#tammydo_eye_L, #tammydo_eye_R{
+  width: 60px;
+  height: 60px;
+  background: silver; 
+  -moz-border-radius: 50px;
+   -webkit-border-radius: 50px;
+  border-radius:50px; 
+}
+
+#tammydo_Owlbody {
+  position: absolute;
+  top: 200px;
+  left: 120px; 
+  width: 0px;
+  height: 0px;
+  border-left: 80px   solid transparent;
+  border-right: 80px   solid transparent;
+  border-top: 100px   solid blue;
+  -moz-border-radius: 60%;
+  -webkit-border-radius: 60%;
+  border-radius: 60%;
+}
+
+#tammydo_leg_L {
+  background-color: #003153 ; 
+ width: 10px;
+	height: 40px;
+  position: absolute;
+  top: 260px;
+  left: 185px; 
+}
+
+#tammydo_leg_R {
+  background-color: #003153; 
+ width: 10px;
+	height: 40px;
+   position: absolute;
+  top: 260px;
+  left: 205px; 
+	background: 
+}
+
+#tammydo_wing_L {
+  position: absolute; 
+  top: 200px;
+  left: 140px; 
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 100px solid blue;
+  background-color: #003153; 
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#tammydo_wing_R {
+  position: absolute; 
+  top: 200px;
+  left: 225px; 
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 100px solid blue;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  
+}
+
+#tammydo_head {
+    position: absolute;
+  top: 120px; 
+  left: 135px; 
+  	width: 130px;
+	height: 125px;
+	background: blue;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+#tammydo_foot_L {
+  width: 0;
+  height:0;
+  border: 50px solid transparent;
+  border-bottom: 70px solid green;
+  position: absolute;
+  top:-50px; 
+}
+
+#tammydo_foot_L {
+  content: '';
+  position: absolute;
+  left: 200px; top: 300px;
+  width:0;
+  height:0;
+  border: 10px solid transparent;
+  border-top:10px solid green; 
+}
+
+#tammydo_foot_R {
+  width: 0;
+  height:0;
+  border: 50px solid transparent;
+  border-bottom: 70px solid green;
+  position: absolute;
+  top:-50px; 
+}
+
+#tammydo_foot_R {
+  content: '';
+  position: absolute;
+  left: 180px; top: 300px;
+  width:0;
+  height:0;
+  border: 10px solid transparent;
+  border-top:10px solid green; 
+}
+
+/* End of OWL Div*/ 
+
+    

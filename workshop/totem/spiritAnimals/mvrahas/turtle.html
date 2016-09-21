@@ -13,24 +13,24 @@
 </head>
 <body>
   <div id="cage">
-    <div id="neck"></div>
-    <div id="head"></div>
-    <div class="eye" id="eyeL"></div>
-    <div class="eye" id="eyeR"></div>
-    <div class="leg1" id="frontR"></div>
-    <div class="leg2" id="frontL"></div>
-    <div class="leg2" id="backR"></div>
-    <div class="leg1" id="backL"></div>
-    <div id="shell"></div>
-    <div id="shellInner"></div>
-    <div id="pattern">
-      <div id="hex1"><div class="hexagon"></div></div>
-      <div id="hex2"><div class="hexagon"></div></div>
-      <div id="hex3"><div class="hexagon"></div></div>
-      <div id="hex4"><div class="hexagon"></div></div>
-      <div id="hex5"><div class="hexagon"></div></div>
-      <div id="hex6"><div class="hexagon"></div></div>
-      <div id="hex7"><div class="hexagon"></div></div>
+    <div id="mvrahas-neck"></div>
+    <div id="mvrahas-head"></div>
+    <div class="mvrahas-eye" id="mvrahas-eyeL"></div>
+    <div class="mvrahas-eye" id="mvrahas-eyeR"></div>
+    <div class="mvrahas-leg1" id="mvrahas-frontR"></div>
+    <div class="mvrahas-leg2" id="mvrahas-frontL"></div>
+    <div class="mvrahas-leg2" id="mvrahas-backR"></div>
+    <div class="mvrahas-leg1" id="mvrahas-backL"></div>
+    <div id="mvrahas-shell"></div>
+    <div id="mvrahas-shellInner"></div>
+    <div id="mvrahas-pattern">
+      <div id="mvrahas-hex1"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex2"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex3"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex4"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex5"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex6"><div class="mvrahas-hexagon"></div></div>
+      <div id="mvrahas-hex7"><div class="mvrahas-hexagon"></div></div>
     </div>
     
   </div>
@@ -40,7 +40,7 @@
     mvrahasChangeAnimal_1("red")
     */
     function mvrahasChangeAnimal_1(hue) {
-      var $shell = document.getElementById("shell")
+      var $shell = document.getElementById("mvrahas-shell")
       $shell.style.backgroundColor = hue
     }
     /*This function changes the hexogons on the shell to a color of your choice 
@@ -49,7 +49,7 @@
     */
 
     function mvrahasChangeAnimal_2(hue) {
-      var $hexagon = document.getElementsByClassName("hexagon")
+      var $hexagon = document.getElementsByClassName("mvrahas-hexagon")
       console.log($hexagon.length)
       for(i=0 ; i<$hexagon.length ; i++){
       $hexagon[i].style.backgroundColor = hue
@@ -65,10 +65,10 @@
     */
 
     function mvrahasChangeAnimal_3(shift){
-      var $eyeL = document.getElementById("eyeL")
-      var $eyeR = document.getElementById("eyeR")
-      var $neck = document.getElementById("neck")
-      var $head = document.getElementById("head")
+      var $eyeL = document.getElementById("mvrahas-eyeL")
+      var $eyeR = document.getElementById("mvrahas-eyeR")
+      var $neck = document.getElementById("mvrahas-neck")
+      var $head = document.getElementById("mvrahas-head")
       console.log($eyeL)
       $eyeL.style.transform = 'translateY('+shift+'px)'; 
       $eyeR.style.transform = 'translateY('+shift+'px)';
