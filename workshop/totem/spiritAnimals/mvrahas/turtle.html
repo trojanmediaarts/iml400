@@ -47,6 +47,7 @@
 
     mvrahasChangeAnimal_2("red")
     */
+
     function mvrahasChangeAnimal_2(hue) {
       var $hexagon = document.getElementsByClassName("hexagon")
       console.log($hexagon.length)
@@ -54,7 +55,27 @@
       $hexagon[i].style.backgroundColor = hue
       $hexagon[i].style.color = hue
     }
+    
+
     }
+
+    /*This function makes the turtle scared, and his head goes into his shell as far as you want.
+
+    mvrahasChangeAnimal_3(10)
+    */
+
+    function mvrahasChangeAnimal_3(shift){
+      var $eyeL = document.getElementById("eyeL")
+      var $eyeR = document.getElementById("eyeR")
+      var $neck = document.getElementById("neck")
+      var $head = document.getElementById("head")
+      console.log($eyeL)
+      $eyeL.style.transform = 'translateY('+shift+'px)'; 
+      $eyeR.style.transform = 'translateY('+shift+'px)';
+      $neck.style.transform = 'translateY('+shift+'px)';
+      $head.style.transform = 'translateY('+shift+'px) rotate(90deg)';
+    } 
+
     
   </script>
 </body>
