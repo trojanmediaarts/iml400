@@ -38,22 +38,52 @@
 </div>
 
 <script text = "text/javascript">
-	console.log('this is working...')
-	<!-- You can change the colors of the two stripes -->
+    /*This function changes the tiger's stripe colors */
+
+				function yedamkim_ChangeAnimal_1(){
+
+				var $topStripe = document.getElementById("yedamkim-stripes")
+				var $bottomStripe = document.getElementById("yedamkim-stripes2")
 
 
-	function yedamkim_changeStripesColor(){
-
-	var $topStripe = document.getElementById("yedamkim-stripes")
-	var $bottomStripe = document.getElementById("yedamkim-stripes2")
-
-
-	$topStripe.style.backgroundColor = "orange" <!--change the color here--> 
-	$bottomStripe.style.backgroundColor = "black" <!--change the color here--> 
+	$topStripe.style.backgroundColor = "black" /*change the color here! Delete black and add your own*/
+	$bottomStripe.style.backgroundColor = "black" /*change the color here! Delete black and add your own*/
 
 	}
 	
-	yedamkim_changeStripesColor()
+	yedamkim_ChangeAnimal_1() 
+
+
+	/*This function gives my tiger a nose job*/
+
+				function yedamkim_ChangeAnimal_2(shift){
+
+				var $nose = document.getElementById("yedamkim-nose")
+				var $nose2 = document.getElementById("yedamkim-nose2")
+				
+				console.log($nose)
+			      $nose.style.transform = 'translateY('+shift+'px)'; 
+			      $nose2.style.transform = 'translateY('+shift+'px)'; 
+
+	}
+	
+	/*yedamkim_ChangeAnimal_2(1) */ /*UNCOMMENT THE FUNCTION TO MAKE IT WORK. change your number thats inside the parenthesis! negative goes up, positive goes down.*/
+
+
+
+
+
+	/* This function adds a mustache to my tiger*/
+
+				function yedamkim_ChangeAnimal_3(){
+
+				var $mouth = document.getElementById("yedamkim-mouth")
+
+	$mouth.style.backgroundColor = "orange" /*change the color here!*/
+
+	}
+	
+	/*yedamkim_ChangeAnimal_3() */ /*uncomment this function to see it work.*/
 
 
 </script>
