@@ -136,23 +136,29 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 */
 
 
-#container {
+/*#container {
   position:absolute;
   width: 800px; 
   overflow: scroll; 
-}
+}*/
 
 #case {
   position: relative; 
+  top: 200px; 
   display: inline-block;
   max-width: 400px;
   min-width: 400px; 
   height: 400px; 
   float: left; 
-  margin: 5px; 
-  border-radius: 40%; 
-  background-color: orange;
+  margin: 10px; 
+  border-radius: 10%; 
+  background-color: Coral;
 }
+
+#tammydo_owl{
+  position: relative; 
+}
+
 #tammydo_beak {
   position: absolute; 
   top: 190px;
@@ -170,7 +176,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 #tammydo_pupil_L {
   position: absolute; 
   left: 38.5%; 
-  top: 44%; 
+  top: 160px; 
   width: 30px;
 	height: 30px;
 	background: #003153 ;
@@ -181,7 +187,7 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 #tammydo_pupil_R {
   position: absolute;
-  top: 44%;
+  top: 160px;
   left: 54%;
   width: 30px;
 	height: 30px;
@@ -193,20 +199,20 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 #tammydo_eye_L {
   position: absolute; 
-  top: 40%; 
+  top: 150px; 
   left: 200px;
 }
 
 #tammydo_eye_R {
   position: absolute;
-  top: 40%;
+  top: 150px;
   left: 140px;
 }
 
 #tammydo_eye_L, #tammydo_eye_R{
   width: 60px;
   height: 60px;
-  background: silver; 
+  background: MintCream; 
   -moz-border-radius: 50px;
    -webkit-border-radius: 50px;
   border-radius:50px; 
@@ -329,19 +335,24 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 
 
+
+
+
 /*I've set my tiger on the center, but if you'd like to place it elsewhere, 
 just change the padding left or top according to your liking*/
-.yedamkim-shape {
+#yedamkim-shape {
 	padding-top:100px;
 	padding-left: 550px;
 	text-align: center;
 	position: relative;
-	
+    top: 550px; 
+    left: -410px;
 }
 
 #yedamkim-atiger {
-	text-align: center;
 	position:absolute;
+    
+    
 }
 
 
@@ -536,3 +547,149 @@ just change the padding left or top according to your liking*/
 }
 
 /*tiger*/
+
+
+
+
+/*Deer*/
+#deer {
+    position:relative;
+    top: 160px;
+    left: -242px;
+    margin: 0 auto 0 auto;
+    height: 300px;
+    width: 300px;  
+    
+}
+
+#naseck-ear-R {
+    position:absolute;
+    top:60px;
+    left:15px;
+	width: 100px;
+	height: 50px;
+	background: sandybrown;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+    transform:rotate(40deg);
+}
+
+#naseck-ear-L {
+    position:absolute;
+    top:60px;
+    left:185px;
+	width: 100px;
+	height: 50px;
+	background: sandybrown;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+    transform:rotate(-40deg);
+}
+
+#naseck-earinside-R {
+    position:absolute;
+    top:70px;
+    left:25px;
+	width: 70px;
+	height: 30px;
+	background: brown;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+    transform:rotate(40deg);
+}
+
+#naseck-earinside-L {
+    position:absolute;
+    top:70px;
+    left:205px;
+	width: 70px;
+	height: 30px;
+	background: brown;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+    transform:rotate(-40deg);
+}
+
+
+#naseck-head {
+   position:absolute;
+    left:82px;
+    top:90px;
+   width: 136px;
+   height: 180px;
+   background-color: sandybrown;
+   -webkit-border-radius: 63x 63px 33px 33px / 8px 18px 2px 2px;
+   border-radius:         80%  80%  120%  120%  / 80%   80%   170%  170%;
+}
+
+#naseck-nose {
+  position: absolute;
+top:210px;
+    left:127px;
+  width: 45px;
+  height: 30px;
+  margin: 20px 0;
+  background: brown;
+  border-radius: 20% / 80%;
+  color: white;
+  text-align: center;
+  text-indent: .1em;
+}
+
+#naseck-eye-L {
+    position:absolute;
+    left:100px;
+    top:140px;
+	width: 30px;
+	height: 20px;
+	background: black;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	transform:rotate(0deg);
+}
+
+#naseck-eye-R {
+    position:absolute;
+    left:165px;
+    top:140px;
+	width: 30px;
+	height: 20px;
+	background: black;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	transform:rotate(0deg);
+}
+
+#naseck-pupil-L {
+    position:absolute;
+    left:110px;
+    top:145px;
+	width: 10px;
+	height: 10px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	transform:rotate(0deg);
+}
+
+#naseck-pupil-R {
+    position:absolute;
+    left:175px;
+    top:145px;
+	width: 10px;
+	height: 10px;
+	background: white;
+	-moz-border-radius: 100px / 50px;
+	-webkit-border-radius: 100px / 50px;
+	border-radius: 100px / 50px;
+	transform:rotate(0deg);
+}
+
+/*End of Deer Div*/
