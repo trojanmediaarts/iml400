@@ -13,7 +13,7 @@
 	</head>
         
      <body>
-        <div id="tiger">
+        <div id="cdiloret-tiger">
             <div id="cdiloret-R_cheek"></div>
             <div id="cdiloret-L_cheek"></div>
             <div id="cdiloret-R_cheek1"></div>
@@ -41,8 +41,8 @@
      
      <script>
          
-         // this function will change both eye colors.
          
+         /*This function changes the tiger's eye colors */
         function Cdiloret_ChangeAnimal_1(color)
          {
              var $R_eye = document.getElementById("cdiloret-R_eye")
@@ -51,6 +51,7 @@
             $L_eye.style.borderTopColor = color
          }
          
+         /*This function changes the tiger's ear colors */
          function Cdiloret_ChangeAnimal_2(color)
          {
              var $L_ear = document.getElementById("cdiloret-L_innerear")
@@ -59,6 +60,7 @@
              $R_ear.style.borderBottomColor = color
          }
          
+         /*This function changes the tiger's eye position */
          function Cdiloret_ChangeAnimal_3(height)
          {
             var $R_eye = document.getElementById("cdiloret-R_eye")
@@ -70,7 +72,7 @@
          
          Cdiloret_ChangeAnimal_1("deeppink")
          Cdiloret_ChangeAnimal_2("deeppink")
-         Cdiloret_ChangeAnimal_3("100px")
+         Cdiloret_ChangeAnimal_3("120px") /*Use values from 80-150px*/
          
     </script>
 </html>
