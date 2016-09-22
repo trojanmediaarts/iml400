@@ -43,7 +43,7 @@
          
          // this function will change both eye colors.
          
-         function cdiloret_changeEyeColor(color)
+        function Cdiloret_ChangeAnimal_1(color)
          {
              var $R_eye = document.getElementById("cdiloret-R_eye")
              var $L_eye = document.getElementById("cdiloret-L_eye")
@@ -51,7 +51,26 @@
             $L_eye.style.borderTopColor = color
          }
          
-         cdiloret_changeEyeColor("deeppink")
-    
+         function Cdiloret_ChangeAnimal_2(color)
+         {
+             var $L_ear = document.getElementById("cdiloret-L_innerear")
+             var $R_ear = document.getElementById("cdiloret-R_innerear")
+             $L_ear.style.borderBottomColor = color
+             $R_ear.style.borderBottomColor = color
+         }
+         
+         function Cdiloret_ChangeAnimal_3(height)
+         {
+            var $R_eye = document.getElementById("cdiloret-R_eye")
+            var $L_eye = document.getElementById("cdiloret-L_eye")
+           $R_eye.style.marginTop = height
+            $L_eye.style.marginTop = height
+         }
+         
+         
+         Cdiloret_ChangeAnimal_1("deeppink")
+         Cdiloret_ChangeAnimal_2("deeppink")
+         Cdiloret_ChangeAnimal_3("100px")
+         
     </script>
 </html>
