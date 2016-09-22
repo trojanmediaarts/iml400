@@ -6,12 +6,12 @@ div {-webkit-transform: scale(.5);
     width: 300px;
 
 }
-#face {
+#alyaomar-face {
     position: absolute;
     left: 200px;
     top: 100px;
 }
-#face:before,#face:after {
+#alyaomar-face:before,#alyaomar-face:after {
     content: '';
     width: 40px;
     height: 130px;
@@ -33,7 +33,7 @@ div {-webkit-transform: scale(.5);
     -o-transform-origin: 0 100%;
     transform-origin: 0 100%;
 }
-#face:after {
+#alyaomar-face:after {
     left: 30;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -46,7 +46,7 @@ div {-webkit-transform: scale(.5);
     -o-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
 }
-#body {
+#alyaomar-body {
     width: 90px;
     height: 115px;
     background: red;
@@ -54,7 +54,7 @@ div {-webkit-transform: scale(.5);
     bottom: 120px;
     left: 305px;
 }
-#body:before {
+#alyaomar-body:before {
     content: '';
     width: 0;
     height: 0;
@@ -65,7 +65,7 @@ div {-webkit-transform: scale(.5);
     border-right: 45px solid transparent;
     border-bottom: 20px solid #fc5e5e;
 }
-#body:after {
+#alyaomar-body:after {
     content: '';
     width: 0;
     height: 0;
@@ -76,7 +76,7 @@ div {-webkit-transform: scale(.5);
     border-right: 45px solid transparent;
     border-top: 25px solid red;
 }
-#lefttriangle {
+#alyaomar-lefttriangle {
     width: 0;
     height: 0;
   position: absolute;
@@ -87,7 +87,7 @@ div {-webkit-transform: scale(.5);
     left: 100px;
   transform: rotate(11deg);
 }
-#righttriangle {
+#alyaomar-righttriangle {
     width: 0;
     height: 0;
   position: absolute;
@@ -100,7 +100,7 @@ div {-webkit-transform: scale(.5);
 }
 
 
-#toprightwing {
+#alyaomar-toprightwing {
    width: 0;
     height: 0;
   position: absolute;
@@ -111,7 +111,7 @@ div {-webkit-transform: scale(.5);
     left: 419px;
 }
 
-#topleftwing {
+#alyaomar-topleftwing {
    width: 0;
     height: 0;
   position: absolute;
@@ -121,7 +121,7 @@ div {-webkit-transform: scale(.5);
     top: -40px;
     left: -240px;
 }
-#lastwingleft {
+#alyaomar-lastwingleft {
      width: 0;
     height: 0;
     position: absolute;
@@ -132,7 +132,7 @@ div {-webkit-transform: scale(.5);
     left: 645px;
      transform: rotate(45deg)
 }
-#lastwingright {
+#alyaomar-lastwingright {
      width: 0;
     height: 0;
     position: absolute;
@@ -143,7 +143,7 @@ div {-webkit-transform: scale(.5);
     left: -35px;
      transform: rotate(135deg)
 }
-#butterflybutt {
+#alyaomar-butterflybutt {
     position: absolute;
   width: 0;
     height: 0;
@@ -154,7 +154,7 @@ div {-webkit-transform: scale(.5);
     left: 405px;
     transform: rotate(210deg)
 }
-#butterflybuttright {
+#alyaomar-butterflybuttright {
     position: absolute;
   width: 0;
     height: 0;
@@ -165,7 +165,7 @@ div {-webkit-transform: scale(.5);
     left: 325px;
     transform: rotate(120deg)
 }
-#butterleftbutt {
+#alyaomar-butterleftbutt {
     position: absolute;
   width: 0;
     height: 0;
@@ -176,7 +176,7 @@ div {-webkit-transform: scale(.5);
     left: 135px;
     transform: rotate(240deg)
 }
-#butterflybuttleft {
+#alyaomar-butterflybuttleft {
     position: absolute;
   width: 0;
     height: 0;
@@ -189,7 +189,7 @@ div {-webkit-transform: scale(.5);
 }
 
 
-#bottomleftwing {
+#alyaomar-bottomleftwing {
     height: 0;
     width: 60px;
    position: absolute;
@@ -200,7 +200,7 @@ div {-webkit-transform: scale(.5);
     top: 40px;
   left: 135px;
 }
-#bottomrightwing {
+#alyaomar-bottomrightwing {
     height: 0;
     width: 60px;
    position: absolute;
@@ -211,7 +211,7 @@ div {-webkit-transform: scale(.5);
     top: 40px;
   left: 445px;
 }
-#tail {
+#alyaomar-tail {
     height: 0;
     width: 60px;
     border-bottom: 180px solid red;
@@ -221,7 +221,7 @@ div {-webkit-transform: scale(.5);
     top: 100px;
     left: 300px;
 }
-#triangle_down {
+#alyaomar-triangle_down {
     width: 0;
     height: 0;
     border-top: 50px solid #20a3bf;

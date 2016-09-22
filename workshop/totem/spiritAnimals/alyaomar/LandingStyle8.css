@@ -1,0 +1,164 @@
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: white;
+}
+html { 
+  background: #FFA500; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+	/*https://css-tricks.com/perfect-full-page-background-image/*/
+h1 {
+	color: #800080;
+	font-size:270%;
+	font-weight: lighter;
+    font-family: Avenir Next Condensed, Helvetics, sans-serif;
+	text-align: center; 
+	margin-top: 95px;
+	margin-left: 75px;
+}
+#my-div{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 50px;
+}
+
+nav-item{
+    max-width: 400px;
+    margin: 0 auto; 
+	float: center;
+}
+h2 {
+    font-family: Avenir Next Condensed, Helvetics, sans-serif;
+    font-weight: lighter;
+	font-size:130%;
+}
+
+.nav{
+	padding-left: 0;
+	width: 100%;
+}
+ul {
+  text-align: center;
+  display: center;
+  margin: 12;
+  width: 100%;
+  padding: 80px 40px 2px 10;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+ font-family: Avenir Next Condensed, Helvetics, sans-serif;
+ width: 33%;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 0;
+  background: #ffcc66;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+/*what happens to bar and text when hover*/
+ul li:hover {
+  background: #000066;
+  color: #ffffff;
+}
+
+
+h4 {
+	color: white;
+	font-size: 350%;
+	font-weight: lighter;
+	font-family: Hiragino Kaku Gothic Pro, Helvetics, sans-serif;
+    text-align: right;
+}	
+
+
+.headerTitle {
+	color: #800080;
+	font-size:270%;
+	font-weight: lighter;
+    font-family: Avenir Next Condensed, Helvetics, sans-serif;
+	text-align: left; 
+}
+	
+footer {
+	color: white;
+	font-style: bold;
+	font-family: Avenir Next Condensed, Helvetics, sans-serif;
+	text-align: center;
+	margin-top: 50px;
+	font-size: 12px;
+}
+/*http://cssdeck.com/labs/another-simple-css3-dropdown-menu*/
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+/*drop down options*/
+ul li ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 0px;
+  left: 154px;
+  width: 100%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+/*drop down*/
+ul li ul li { 
+  background: #500055; 
+  display: block; 
+  color: #ffffff;
+  width: 100%;
+  text-shadow: 0 -1px 0 #000;
+}
+/*drop down background*/
+ul li ul li:hover { background: #666; }
+
+ul li:hover > ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
