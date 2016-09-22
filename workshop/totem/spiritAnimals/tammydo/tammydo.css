@@ -327,4 +327,212 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 /* End of OWL Div*/ 
 
-    
+
+
+/*I've set my tiger on the center, but if you'd like to place it elsewhere, 
+just change the padding left or top according to your liking*/
+.yedamkim-shape {
+	padding-top:100px;
+	padding-left: 550px;
+	text-align: center;
+	position: relative;
+	
+}
+
+#yedamkim-atiger {
+	text-align: center;
+	position:absolute;
+}
+
+
+#yedamkim-triangle-down {
+	width: 0;
+	border-left: 70px solid transparent;
+	border-right: 70px solid transparent;
+	border-top: 110px solid #b37700;
+	margin-top: -70px;
+	margin-left:0px;
+}
+
+
+#yedamkim-mouth {
+	width: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 5px solid black;
+	margin-top: -45px;
+	margin-left: 50px;
+}
+
+#yedamkim-nose {
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 10px solid #4d1a00;
+	margin-top: -15px;
+	margin-left: 50px;
+}
+
+#yedamkim-nose2 {
+	width: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 35px solid #b35900;
+	margin-top: -45px;
+	margin-left: 50px;
+}
+
+#yedamkim-whiteeyebrows {
+		width: 0;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 30px solid white;
+	margin-top: -50px;
+	margin-left: 30px;
+}
+
+
+#yedamkim-whiteeyebrows2 {
+		width: 0;
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 30px solid white;
+	margin-top: -30px;
+	margin-left: 80px;
+}
+
+
+
+
+#yedamkim-trapezoid {
+	border-bottom: 30px solid #b37700;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	height: 0;
+	width: 100px;
+	margin-top: -63px;
+}
+
+#yedamkim-leftear {
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-left: 50px solid #e6e6e6;
+	border-bottom: 20px solid transparent;
+	margin-top: -44px;
+	margin-left:0px;
+}
+
+
+#yedamkim-leftear2 {
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid black;
+	border-right: 30px solid transparent;
+	margin-top: -40px;
+	margin-left:20px;
+}
+
+#yedamkim-leftear3 {
+	width: 0;
+	height: 0;
+	border-top: 10px solid black;
+	border-left: 30px solid transparent;
+	margin-top: -10px;
+	margin-left:-9px;
+}
+
+
+#yedamkim-rightear {
+	width: 0;
+	height: 0;
+	border-top: 20px solid transparent;
+	border-right: 50px solid #e6e6e6;
+	border-bottom: 20px solid transparent;
+	margin-top: -35px;
+	margin-left: 90px;
+}
+
+
+#yedamkim-rightear2 {
+	width: 0;
+	height: 0;
+	border-bottom: 10px solid black;
+	border-left: 30px solid transparent;
+	margin-top: -10px;
+	margin-left:90px;
+}
+
+
+#yedamkim-rightear3 {
+	width: 0;
+	height: 0;
+	border-top: 10px solid black;
+	border-right: 30px solid transparent;
+	margin-top: -10px;
+	margin-left: 120px;
+}
+
+#yedamkim-lefteye {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 6px solid black;
+	margin-top: 50px;
+	margin-left: 36px;
+}
+
+
+#yedamkim-righteye {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 6px solid black;
+	margin-top: -5px;
+	margin-left: 86px;
+}
+
+
+#yedamkim-leftcheek {
+	width: 0;
+	height: 0;
+	border-top: 70px solid transparent;
+	border-right: 80px solid #ffaa00;
+	border-bottom: 30px solid transparent;
+	margin-top: -30px;
+	margin-left: -35px;
+}
+
+
+#yedamkim-rightcheek {
+	width: 0;
+	height: 0;
+	border-top: 70px solid transparent;
+	border-left: 80px solid #ffaa00;
+	border-bottom: 30px solid transparent;
+	margin-top: -100px;
+	margin-left: 95px;
+}
+
+
+#yedamkim-stripes {
+	width: 70px;
+	height: 2px;
+	background: black;
+	margin-top: -50px;
+	margin-left:35px;
+}
+
+
+#yedamkim-stripes2 {
+	width: 50px;
+	height: 2px;
+	background: black;
+	margin-top: 5px;
+	margin-left:45px;
+}
+
+/*tiger*/
