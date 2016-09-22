@@ -1,6 +1,6 @@
 element.style{
 }
-.cage {
+.valeriva-cage {
     position: relative;
     left: 10px;
     height: 300px;
@@ -9,89 +9,89 @@ element.style{
     border-radius:70%;
     background-color: #cccccc;
 }
-.body {
+#valeriva-body {
     position: relative;
     top:65px;
     width:230px;
     height:180px;
 }
 
-.body { left: 35px; }
+#valeriva-body { left: 35px; }
 
-.body {
+#valeriva-body {
     background-color:white;
     border-radius: 40px;
 }
-.foot_L {
+#valeriva-foot_L {
     position: relative;
     bottom:100px;
     width:70px;
     height:20px;
 }
-.foot_L { left: 70px; }
-.foot_R { left: 150px; }
+#valeriva-foot_L { left: 70px; }
+#valeriva-foot_R { left: 150px; }
 
-.foot_L {
+#valeriva-foot_L {
     background-color: black;
     border-radius: 35px;
 }
-.foot_R {
+#valeriva-foot_R {
     position: relative;
     bottom:80px;
     width:70px;
     height:20px;
 }
-.foot_R {
+#valeriva-foot_R {
     background-color: black;
     border-radius: 35px;
 }
-.eye_L {
+#valeriva-eye_L {
     position: relative;
     bottom:180px;
     width:70px;
     height:70px;
 }
-.eye_L { left: 70px; }
-.eye_R { left: 150px; }
+#valeriva-eye_L { left: 70px; }
+#valeriva-eye_R { left: 150px; }
 
-.eye_L {
+#valeriva-eye_L {
     background-color: black;
     border-radius: 35px;
 }
-.eye_R{
+#valeriva-eye_R{
     position: relative;
     bottom:110px;
     width:70px;
     height:70px;
 }
-.eye_R {
+#valeriva-eye_R {
     background-color:black;
     border-radius: 35px;
 }
-.pupil_L {
+#valeriva-pupil_L {
     position: relative;
     bottom:250px;
     width:20px;
     height:20px;
 }
-.pupil_L { left: 70px; }
-.pupil_R { left: 150px; }
+#valeriva-pupil_L { left: 70px; }
+#valeriva-pupil_R { left: 150px; }
 
-.pupil_L {
+#valeriva-pupil_L {
     background-color: white;
     border-radius: 35px;
 }
-.pupil_R{
+#valeriva-pupil_R{
     position: relative;
     bottom:270px;
     width:20px;
     height:20px;
 }
-.pupil_R {
+#valeriva-pupil_R {
     background-color:white;
     border-radius: 35px;
 }
-.beak {
+#valeriva-beak {
     position: relative;
     width: 0;
 	height: 0;
@@ -100,9 +100,9 @@ element.style{
 	border-right: 20px solid transparent;
 	border-top: 30px solid #d58bd8;
 }
-.beak { left: 120px; }
+#valeriva-beak { left: 120px; }
 
-.wing_L {
+#valeriva-wing_L {
     position: relative;
 	width: 0;
 	height: 0;
@@ -110,4 +110,4 @@ element.style{
 	border-top: 50px solid #cccccc;
 	border-right: 50px solid transparent;
 }
-.wing_L { left: 205px; }
+#valeriva-wing_L { left: 205px; }

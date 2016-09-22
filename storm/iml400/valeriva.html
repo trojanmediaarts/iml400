@@ -9,24 +9,46 @@
 		<meta name="author” content="Valeri Vazquez Neri">
 		<meta name="revised" content="September 15, 2016">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/spiritanimal.css" />
+		<link rel="stylesheet" type="text/css" href="valeriva.css" />
+		<title>Owie</title>
 </head>
 	<body>
-	<div id="container">
-        <div class="cage">
-           <section class="body"></section>
-           <section class="eye_R"></section>
-           <section class="eye_L"></section>
-           <section class="foot_R"></section> 
-           <section class="foot_L"></section>
-           <section class="pupil_L"></section>
-           <section class="pupil_R"></section>
-           <section class="beak"></section>
-           <section class="wing_L"></section>
-           <section class="wing_R"></section>
+	<div class="valeriva-cage">
+           <section id="valeriva-body"></section>
+           <section id="valeriva-eye_R"></section>
+           <section id="valeriva-eye_L"></section>
+           <section id="valeriva-foot_R"></section> 
+           <section id="valeriva-foot_L"></section>
+           <section id="valeriva-pupil_L"></section>
+           <section id="valeriva-pupil_R"></section>
+           <section id="valeriva-beak"></section>
+           <section id="valeriva-wing_L"></section>
             
-        </div>
-    </div>   
+    </div>
+    <script type="text/javascript">
+		
+		console.log('HELLOOOOO')
+//First Function: change pupil color by running valeriva_changePupilColor("#cccccc") replace#cccccc with the color of your heart's desire
+		function valeriva_changePupilColor(pupilColor) {
+
+ 			var $pupil_L = document.getElementById("valeriva-pupil_L")
+            var $pupil_R = document.getElementById("valeriva-pupil_R")
+
+			$pupil_L.style.backgroundColor= pupilColor
+            $pupil_R.style.backgroundColor= pupilColor
+        }
+//Second Function: change the y position of the wing by running valeriva_changeWingPosition("300px") replace 300 px with your prefered value
+    function valeriva_changeWingPosition(wingPosition) {
+            var $wing_L = document.getElementById("valeriva-wing_L")
+            $wing_L.style.bottom= wingPosition
+    }
+//Third Function: change the roundness of the owl by running valeriva_changeRoundness("100px") change the 100 px to see if the owl worked out today or had a netflix and chill kind of day
+        function valeriva_changeRoundness(roundness){
+            var $body = document.getElementById("valeriva-body")
+            $body.style.borderradius= roundness
+        }
+        </script>
+
     </body>
                                                                     
 </html>
