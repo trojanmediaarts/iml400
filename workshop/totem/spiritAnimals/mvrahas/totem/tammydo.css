@@ -17,17 +17,11 @@ Animal creation refrence: http://codepen.io/bytezen/pen/amOgxW
 
 #case {
   position: relative; 
-  display: inline-block;
-  max-width: 400px;
-  min-width: 400px; 
+  width: 400px;
   height: 400px; 
-  float: left; 
-  margin: 5px; 
-  border-radius: 40%; 
-  background-color: orange;
-  position: absolute;
-  top: 545px;
-  right: 565px;
+  margin: 0 auto; 
+  border-radius: 50px; 
+  background-color: rgb(255,243,80);
 }
 #tammydo_beak {
   position: absolute; 

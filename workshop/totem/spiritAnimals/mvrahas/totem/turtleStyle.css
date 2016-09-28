@@ -8,9 +8,8 @@ body{
 	height: 300px;
 	background: aliceblue;
 	border-radius: 50px;
-	position: absolute;
-	top: 230px;
-	right: 627px;
+	position: relative;
+	margin: 0 auto;
 }
 
 #mvrahas-neck{
