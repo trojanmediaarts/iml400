@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-3.1.0.js"></script>
+    <script>
+
+    //
+    // THIS IS jQUERIES WORLD Y'ALL
+    //
+        $(document).ready(function(){
+            console.log("this should work");
+            // enter all javascript in here now...
+            
+            function anotherTest() {
+                console.log("This is another test...that works?? i hope");
+            }
+
+            $("#container").text("Hello I gotcha");
+           
+            //now let's add a click handler to the div element
+            $("#container").on('click', anotherTest);
+           
+        })
+    </script>
+</head>
+<body>
+    <div id="container" style="width: 300px; height: 300px; background: mistyrose">
+        Hi! I am a diva
+    </div>
+<!--     
+    <div id="container" style="width: 300px; height: 300px; background: mistyrose" onclick="testFunction" > 
+-->
+
+    <script>
+    /* 
+        This is how we do callbacks and event handlers in javascript
+    */
+
+        var clickCount = 0;
+        function testFunction() {
+            
+            clickCount++;  // clickCount = clickCount + 1
+            console.log("We have " + clickCount + " clicks y'all");
+        }
+    </script>
+</body>
+</html>
