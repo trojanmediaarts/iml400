@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="spotify-result.css">
+    <script src="jquery-3.1.0.js"></script>
+    <script src="test_data.js"></script>
+    <script>
+//        var smpl_query = "https://api.spotify.com/v1/search?q=tania%20bowra&type=artist"
+        var URLspotify_query = "https://api.spotify.com/v1/search"
+        var result = undefined;
+        
+        //data for Tania Bowra
+        var artistID = "08td7MxkoHQkXnWAYD8d6Q";
+        var albumID = "6akEvsycLGftJxYudPjmqK";
+        
+        function onGotData(data) {
+            console.log( 'got something from the server');
+            result = data;
+        }
+        
+        $(document).ready(function(){
+                                    
+            console.log('spotify test ready...')
+            
+            var myParams = { 
+                q: "'tania bowra'",
+                type: "artist"
+            };
+            
+//            $.get(URLspotify_query, myParams)
+//                .done(onGotData)
+//                .fail(function(err) {
+//                        console.log("error connecting: " + err);
+//                    });
+            
+            //Logic for the Radio Buttons            
+            $("input:radio").on("change", function() {
+                var val = $(this).val();
+                var lbl = $("label:first");
+                
+                if( val == "album") {
+                    lbl.text("Album")    
+                } else if( val == "track") {
+                    lbl.text("Track")    
+                } else {
+                    lbl.text("Artist")    
+                }
+                
+                lbl.text( lbl.text() + " Name")
+            })
+            
+            
+            // Logic for activating the Get Data Button
+            $("#query").on('change',function(){
+                if($("#query").val().length > 1 ) { 
+                    $("button").removeAttr("disabled");
+                } else {
+                    $("button").attr("disabled","true");
+                }
+            });            
+            
+            
+        })
+    </script>
+</head>
+<body>
+   
+   <!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<div class="w3-container w3-padding-32 w3-center w3-opacity w3-margin-bottom">  
+  <div class="w3-clear"></div>
+  <h1>Spotify API Demo</h1>
+  <p>demo accessing and parsing data from spotify
+  <input style="margin-bottom: 0px;" id="query" class="w3-input" type="text">
+<label>Artist Name</label>
+
+  <p style="float:left; margin: 0px 20px;">
+  <input class="w3-radio" type="radio" name="qryType" value="artist" checked>
+  <label class="w3-validate">artist</label>
+  </p>
+  <p style="float:left; margin: 0px 20px;">
+  <input class="w3-radio" type="radio" name="qryType" value="album">
+  <label class="w3-validate">album</label></p>
+  <p style="float:left; margin: 0px 20px;">
+  <input class="w3-radio" type="radio" name="qryType" value="track">
+  <label class="w3-validate">track</label></p>              
+  <div class="w3-clear"></div>
+  
+  <p class="w3-padding-16"><button class="w3-btn" onclick="getData()" disabled="true">Get Data</button></p>
+</div>
+
+<!-- Results Grid -->
+<div class="w3-row-padding" id="myGrid" >
+  <div class="w3-third" id="col1">
+  </div>
+
+  <div class="w3-third" id="col2">
+  </div>
+
+  <div class="w3-third" id="col3">
+  </div>
+  </div>
+</div>
+<!-- Clear floats -->
+<div class="w3-clear"></div><br><br>
+
+    
+</body>
+</html>
