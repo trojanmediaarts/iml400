@@ -7,12 +7,50 @@
     <link rel="stylesheet" href="css/lib/w3.css">    
     <script src="js/lib/w3data.js"></script>    
     <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
     <script src="js/main.js"></script>
 
 </head>
 <body>
-    <div id="spotifyReults">
-        <h2 w3-repeat="data">{{name}}</h2>
+
+    <section class="w3-section">
+     <header class="w3-center"> spotify api test</header>    
+    </section>
+ 
+  <div id="spotifyResults" class="w3-container">      
+      <div class="w3-row-padding" w3-repeat="items">
+          <div >
+            <div class="w3-panel">
+                 <div class="w3-card-4 w3-lime"> 
+                      <header>{{name}}</header>
+                      <p>{{owner}}</p>
+                      <p>{{total}}</p>
+                     <img src={{img}}>
+                 </div>                
+            </div>
+          </div>
+          
+<!--
+          <div class="w3-half">
+            <div class="w3-panel">
+                 <div class="w3-card-4 w3-lime"> 
+                      this is me
+                 </div>                
+            </div>
+          </div>          
+-->
+      </div>
+  </div>
+  
+   <!--
+    <div id="results" class="w3-container"> 
+        <div w3-repeat="items" >
+            <h2>{{name}}</h2>
+        </div>
     </div>
+    -->
+    <!-- load some test data -->
+    <script src="data/test-artist-search.js"></script>
+    <script src="data/test-playlist-search.js"></script>
 </body>
 </html>
