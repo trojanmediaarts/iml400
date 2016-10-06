@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+    <script src="js/lib/w3data.js"></script>    
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+    <script src="js/main-interactive.js"></script>
+
+</head>
+<body>
+      
+    <section class="w3-section">
+    <h1 class="w3-center"> spotify api test</h1>  
+
+    <div class="w3-container w3-center">
+        <input id="search" class="w3-input w3-border" type="text" placeholder="search for">    
+        <label for="search" class="w3-text-grey">Artist Name</label>
+    </div>
+        
+    <div id="queryOptions" class="w3-center">                  
+          <span>
+              <input class="w3-radio" type="radio" name="qryType" value="artist" checked>
+<!--              <label class="w3-validate" style="vertical-align:middle">artist</label>-->
+          </span>
+          <span>
+              <input class="w3-radio" type="radio" name="qryType" value="album">
+<!--              <label class="w3-validate">album</label>-->
+          </span>
+          <span>
+              <input class="w3-radio" type="radio" name="qryType" value="track">
+<!--              <label class="w3-validate">track</label>-->
+          </span>         
+          
+          <span>
+              <input class="w3-radio" type="radio" name="qryType" value="playlist">
+<!--              <label class="w3-validate">track</label>-->
+          </span>                      
+    </div>      
+    </section>
+ 
+  <div id="playlistResults" class="w3-container">    
+       
+      <div class="w3-row-padding w3-section" w3-repeat="items">   
+        <section class="w3-half" >
+            <summary class="w3-panel w3-border">               
+                <div class="w3-center w3-section">
+                   <img src={{img}}>
+                </div>
+                <span class="w3-large">{{name}}</span>
+                <span class="righty italicize w3-text-lime">{{total}} tracks</span>
+                <p class="w3-medium italicize w3-text-grey"><a href={{ownerUrl}}>{{owner}}</a></p>   
+            </summary>
+        </section>  
+      </div>  
+      
+ </div>
+
+</body>
+</html>
