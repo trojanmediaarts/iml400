@@ -29,7 +29,7 @@ $(document).ready(function() {
             name = anItem.name;
         }
             
-        if( _.has(anItem,"images") && anItem.images.length > 1 ) { 
+        if( _.has(anItem,"images") && anItem.images.length > 2 ) { 
             img = anItem.images[1].url; 
         }      
         
