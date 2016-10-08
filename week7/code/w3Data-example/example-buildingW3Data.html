@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+    <script src="js/lib/w3data.js"></script>
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+    <script src="data/test-playlist-search-short.js"></script>
+</head>
+<body class="w3-container">
+  <div class="w3-pale-yellow">
+       <h1> Parsing Data Demo</h1>
+       <p> Things were a little thick in class last session. That is to be expected given that there are a lot of moving parts in building even a simple app like this. However, I know you can get it and I can do a better job of breaking down the pieces that go into working with an API like this.</p>
+
+       <p> This is a demo that I whipped together. In order to properly use it you must read the page source. Find the first script tag at the bottom of the HTML source file.</p>
+
+       <p>
+        The code is <span class="w3-yellow">heavily</span> commented and it describes each step in the process.  The HTML file output will show you the results of the code executing. </p>
+
+       <p>Read through this and try to understand what is happening. Change values and see if you can predict the results before you reload the page. One hint is to open the console which will alert you if you have made any coding errors.</p>
+
+       <hr/>      
+  </div>
+
+   
+    <div id="myConsole">
+    </div>
+    
+    <div id="myDataDisplay">
+        <section class="w3-panel w3-khaki w3-section" w3-repeat="items">
+            <h3>{{name}}</h3>
+            <span class=" w3-small w3-text-green">{{trackCount}}</span>
+        </section>
+    </div>
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+        // this is just to hide stuff that I ain't ready to show
+        // yet.  You can ignore it for now..
+        $("#myDataDisplay").hide();
+        
+        
+        // get the spotifResult element using jQuery
+        var $consoleDiv = $("#myConsole");
+        
+       // some data from spotify
+        $consoleDiv.append("<h2> SCRIPT PART 1 </h2>");       
+        $consoleDiv.append("<p>starting...</p>");
+        
+
+        // you have to look at the spotify API to know 
+        // what fields you are going to get back in the response
+        // for playlists look here and look at the
+        // "Playlist Object(simplified) and the "paging object sections:
+        //
+        // https://developer.spotify.com/web-api/search-item
+        //
+        // in the "paging object section" documentation you will see that there is a property
+        // called "items" that has the requested data....
+        
+        $consoleDiv.append("<p>I received this many data items: " + serverResponse.playlists.items.length + " </p>");
+        
+        // ok....typing that above over and over again is going to get
+        // annoying. So, I am going to write a function that I can call
+        // which will take a string and then call jQuery for me to add it 
+        // to the Div element
+        
+        //this version of the function will output a new paragraph...
+        function showP(myStr) {
+            $consoleDiv.append("<p>" + myStr + "</p>");
+        }
+  
+        //...this version of the function will just put whatever
+        // I pass into it at the end of the console.
+        function show(myStr) {
+            $consoleDiv.append(myStr);
+        }
+        
+        showP("testing the function...");
+        
+        //let's also add a function to add a divider cuz this
+        // example is going to get long in the tooth...
+        // ..notice what I did here...1 function is calling another
+        // function....
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        hr();
+        
+        // ah that is much better, n'est pas?
+        // ok... let's store the items in a variable so that we
+        // can save some typing too:
+        
+        var playlists = serverResponse.playlists.items;
+        
+        //let's print out all of the play list names and how 
+        // many tracks they have...
+        
+        show("<h3>getting tracks version 1...</h3>")
+        
+        for( var i=0; i < playlists.length; i++) {
+            var currentName = playlists[i].name;
+            var numberOfTracks = playlists[i].tracks.total;
+            showP("playlist: " + currentName + " has " + numberOfTracks + " tracks ");
+        }
+        
+        hr();
+        
+        // lodash is a **very** helpful javascript library of functions
+        // that shortens what you have to type AND can make your 
+        // code more readable.
+        // Let's use lodash (which is included in the <head> of this doc)
+        // to do the same things that we just did
+        
+        show("<h3>getting tracks version 2 - using lodash...</h3>")
+        
+        // create a function that lodash will call with each 
+        // item in the playlist
+        function myEachFunction( someObject ) {
+            showP(someObject.name +" " + someObject.tracks.total); 
+        }
+        
+        _.each(playlists, myEachFunction )
+        
+        show("<h2>That's it for part 1!</h2>");
+        hr();
+    </script>
+    <script>
+        hr();
+        show("<h2> SCRIPT PART 2 </h2>");   
+
+        // now let's play around a bit with w3Data
+        // what I want to do is display the same data as above
+        // but this time wrap it in some HTML using W3 Data.
+        
+        // You should have read the first 2 sections of W3Data
+        // here: 
+        //    http://www.w3schools.com/w3css/w3data_home.asp
+        // and here:
+        //     http://www.w3schools.com/w3css/w3data_objects.asp
+        
+        showP("have you read the W3Data Documentation? ");
+        
+        show("<a href='http://www.w3schools.com/w3css/w3data_home.asp'>I. Introduction</a><br/>");
+        
+        show("<a href='http://www.w3schools.com/w3css/w3data_objects.asp'>II. Objects</a><br/>");
+        
+        // the basic idea is that we need to create an object that:
+        //    has 1 property that is an array of objects...
+        //    the array of objects will property names that we will put
+        //    in our HTML...
+        //    w3Data will substitute the value of each object property
+        //    into the HTML...
+        //    
+        //    First let's convert the server playlist data into the
+        //    object format that w3 Data requires....I am going to use
+        // the handy lodash approach that we used in Step 1.
+        
+        // first let's create an array that will hold our array of W3 formatted
+        // objects.
+        
+        var playlistObjects = [];  // this is an array with nothing in it
+        
+        function makeMeAW3DataObject( someObject ) {
+            var aTempObject = { "name": someObject.name, "trackCount": someObject.tracks.total };
+            
+            playlistObjects.push( aTempObject );    
+        }
+        
+        // let's test this function out with 1 item from the playlist
+        makeMeAW3DataObject(playlists[0]);
+        showP("testing out the function that takes playlist objects and makes an array of objects that we can use in W3 Data...")
+        
+        showP("...the playListObjects array has <br/>" + playlistObjects.length + "<br/> item(s) in it...the first one is:")
+        show(playlistObjects[0].name +", " + playlistObjects[0].trackCount);
+        
+        // cool that works. Now, let's use lodash to run through all
+        // of our playlist objects and fill this array.
+        
+        hr();
+        //clear the array first from our test
+        
+        playlistObjects = [];
+        
+        _.each(playlists, makeMeAW3DataObject);
+        
+        showP("after running lodash the playList Ojects array has <br/>" + playlistObjects.length +" <br/> objects");
+        
+        // alright now we have an array of objects. But W3 requires that 
+        // the array be stored in an object. That's easy enough to do"
+        
+        var w3Object = { items: playlistObjects };
+        
+        //Cool, we have an object with one property named, items. 
+        // In order to hook that up to w3Data we need that property name
+        // as the value for the w3-repeat attribute (READ THE DOCS!!)
+        
+        
+        hr()
+        show("<h2> And finally we have....</h2>")
+        // I have already done this in the HTML above
+        // unhide the div now that I am ready to put some data into it
+        $("#myDataDisplay").show();
+        
+        w3DisplayData("myDataDisplay",w3Object);
+        
+        
+        $("#myDataDisplay").append("<hr/><h2>That's it for part 2!!</h2>");
+      
+    </script>
+</body>
+</html>
