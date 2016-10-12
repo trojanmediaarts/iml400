@@ -46,9 +46,7 @@ $(document).ready(function() {
 //    $search.on("blur", handleSearch );    
     $search.on("keypress", function(e) {
         
-        if(e.which == 13) { 
-//            e.preventDefault();
-//            $search.blur();            
+        if(e.which == 13) { // this is the code for the enter key         
             handleSearch();
         }
     })

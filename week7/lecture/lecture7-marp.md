@@ -7,17 +7,30 @@
 IML 400 Creative Coding for the Web
 ====
 ## Programming the Web - APIs
-### Meeting 6:    09.29.16
+### Meeting 7:    10.06.16
 
 ---
-## Reminder
+## Agenda
 
-* Midterm website is due next week!
-	* Homepage is accessible from [here](http://storm.usc.edu/~rspell/iml400)
-	* All assignments to date are completed and accessible from somewhere on your site
-	* All of your links work
+### 1. Lecture
+1. API's and Art
+2. API's part 2
+
+### 2. Workshop
+1. Interactive API's
+
 
 ---
+
+## API's and Art
+
+API's convert data and programs into material.  
+
+This material is released to the network and in a networked culture gets amplified and massaged into unanticipated forms.
+
+
+---
+
 ## Objects are data tables
 
 It might help you to think about objects like data tables.  
@@ -261,3 +274,11 @@ the display has used the data to make presentation decisions. e.g.
 4. Code the mockup as a template
 5. Fill the mockup with live data
 6. Make it interactive (hookup the page to a live data source) 
+
+---
+
+## Spotify Interactive Example
+
+You can check out the source code for these examples on Github.  The code is in ```week7/code/spotify-example```  
+
+_NOTE: In order to run the examples you may need to run a local webserver **from the spotify-example directory.**  There are instructions for running a local server on the wiki [here](https://github.com/trojanmediaarts/iml400/wiki/Week-7-Resources)._
