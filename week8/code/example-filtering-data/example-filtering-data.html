@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example filtering data</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+    <script src="js/lib/w3data.js"></script>
+    <script src="data/test-data-prince.js"></script>
+
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+</head>
+<body class="w3-container" style="margin-bottom: 50px">
+  <div class="w3-pale-yellow">
+       <h1> Filtering Data Demo</h1>
+       <p> Thus far we have fetched data and displayed it. We haven't done much in terms of data processing other than select a few fields that we want to present to the user and ignore the remainder.</p>
+       
+       <p>In this example we are going to demonstrate basic sorting and filtering. We will be using the following useful <a href="https://lodash.com/docs/4.16.4">Lodash</a>  functions for this: </p>
+
+       <ul class="w3-ul">
+           <li><a href="https://lodash.com/docs/4.16.4#forEach">each</a></li>
+           <li><a href="https://lodash.com/docs/4.16.4#map">map</a></li>
+           <li><a href="https://lodash.com/docs/4.16.4#filter"></a>filter</li>
+           <li><a href="https://lodash.com/docs/4.16.4#sort"></a>sort</li>           
+       </ul>
+       
+       <p> We won't be fetching data from the server. Instead we will use data that I have already obtained and saved. You can look at the data here: <a href="data/test-data-prince.js">Prince Artist Search Result</a>. The data is the result of an artist search for 'prince'. </p>
+       
+       <p> In this example we will also be using <a href="http://www.w3schools.com/w3css/w3data_home.asp">W3 Data</a> as a template to show the results. If you are </p>
+       <p>You should read the HTML source of this document for comments and explanations for how this is working</p>
+       <hr/>      
+  </div>
+
+   
+     <hr/>
+
+    <div>
+        <h2 class="w3-green"> the results</h2>
+        <div id="searchResults" class="w3-container">
+            <div id="myDataDisplay">
+                <section class="w3-panel w3-khaki w3-section" w3-repeat="items">
+                   <input type="hidden" name="artistId" value="{{id}}">
+                    <h3><a href={{artistURL}}>{{name}}</a></h3>
+                    <img src={{image}} class="w3-show-block" style="max-width: 300px">
+                    <span class=" w3-small w3-text-green">popularity: {{popularity}}</span>
+                    
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="w3-green"> console </h2>
+    <div class="w3-grey" id="myConsole">
+    </div>
+    
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+        var $console = $("#myConsole");        
+        //The data is stored in a variable named: princeSearchResults
+        // Open the data/test-data-prince.js file to see this
+        
+        //lets see how many results we have:
+        showP("we have " + princeSearchResults.artists.items.length + " data items");
+        
+        //First I am going to get the data from the Spotify format into a format that I can use with W3Data
+        
+        //this function just takes a spotify object, accesses its fields
+        // and then creates a new object with just the fields that we need
+        function makeW3DataFormat(aSpotifyObject) {
+            var name = aSpotifyObject.name;
+            var id = aSpotifyObject.id;            
+            var popularity = aSpotifyObject.popularity;
+            var artistURL = aSpotifyObject.external_urls.spotify;
+            var genres = aSpotifyObject.genres;
+            // initialize the image variable to something in case
+            // there is no image for the data
+            var image = "images/www_newtow_ac_uk__files__covers__968361.jpg";
+            
+            if(_.has(aSpotifyObject, "images") && aSpotifyObject.images.length >= 2) {                
+                image = aSpotifyObject.images[1].url;            
+            }
+            
+            return {name: name, id: id, image: image, popularity: popularity, artistURL: artistURL, genres: genres};
+        }
+        
+        //the map function is just like each. The only difference is that it puts the results into an array for you ...so this ...
+        var w3Data = _.map(princeSearchResults.artists.items, makeW3DataFormat);
+        
+        //... is the same as doing this:
+        /*
+            var w3Data  = []; // an empty array
+            
+            _.each(princeSearchResults.artists.items,    function(obj) { 
+                var temp = makeW3DataFormat(obj);
+                //add the object returned from makeW3DataFormat
+                // to the w3Data array
+                
+                w3Data.push(obj);
+            })         
+        */
+        
+        
+        showP("w3Data length = " + w3Data.length);
+        
+        
+        /*
+            DISPLAYING THE RESULTS
+        */        
+        
+        // Ok, now we will take the data and put it into an 
+        // object that we can pass to w3 data for display
+
+            
+        var displayObj = {items: w3Data};
+        w3DisplayData("myDataDisplay", displayObj);
+        
+        
+        //But it might be nice to have the data sorted by popularity
+        // In order to do that we need to sort the w3Data by popularity before displaying it
+        // Using lodash this is very easy
+        // Uncomment this and comment out above
+        
+        /*
+            SORTING THE RESULTS
+            
+            Uncomment below to use sorting. Make sure
+            the Code for Displaying (above) and Filtering (below)
+            are commented out
+        */
+        
+        /*
+        _.sortBy(w3Data,"popularity")
+        var displayObj = {items: w3Data};
+        w3DisplayData("myDataDisplay", displayObj);
+        */
+        
+        /*
+            FILTERING THE RESULTS
+        */
+        
+        // In order to filter the results we can use a similar process as for sorting
+        // take the W3Data and filter it before we display it
+        // We will use the lodash filter function for this
+        
+        /*
+        var filtered = _.filter(w3Data, function(obj){ 
+                            console.log(obj.popularity >= 50);
+                            return obj.popularity >= 50;
+                        })
+        var displayObj = {items: filtered}
+        w3DisplayData("myDataDisplay", displayObj);
+        */
+        
+        // I'd like to display the results sorted by their popularity field. 
+        // If you aren't sure how to get this then check the Spotify API Reference: https://developer.spotify.com/web-api/search-item/#Request%20Parameters
+        // The Lodash sort function will 
+        
+        
+        
+        //Notice the formating of my search string? I got this 
+        // formatting by using the Spotify Web API Console to test my query
+        // Go here:
+        // https://developer.spotify.com/web-api/console/get-search-item/
+        //
+        // If you enter your query then you can see how to properly format it to get the results that you desire.
+        
+        var $results = $("#searchResults");
+        var $btnSearch = $("button:first-child");
+        var $btnDisplay = $("button:last-child");
+        //hide this button until we have data
+        $btnDisplay.hide();
+        
+        // this will have a value once we get some data back
+        var result = undefined;
+        
+        // this is the meat and potatos...or tofu and brocolini 
+        // of this example
+        // Attach an event listener to the search button
+        // If this is unclear then review the example-user-input.html demo
+        
+        $btnSearch.on("click", searchSpotify )
+        $btnDisplay.on("click", displayData)            
+        
+        function searchSpotify() {
+            //Variables
+
+            //the base spotify API url
+            var spotifySearchURL = " https://api.spotify.com/v1/search";
+
+            //an object that will store the parameters
+            //necessary to make the request.
+            //See Request Parameters Section here:
+            // https://developer.spotify.com/web-api/search-item/
+
+            var params = {q: "george+russell+sextet", type: "artist"}
+            
+            //this function will be called if jquery can get all of the data from Spotify
+            function processResults(data) {
+                showP("SUCCESS!!")
+                showP("Retrieved " + data.artists.items.length + " artist hits");
+                
+                //now set the result equal to the data
+                // so other parts of our code can use it
+                result = data;
+                
+                //hide the search button because we are done searching...
+                $btnSearch.hide();
+                //...show the display results because we have something to display now
+                $btnDisplay.show();
+            }
+            
+            //this function will be called if there are any problems
+            function error(errorObject) {
+                showP("OOPs!! there was an error. Open the console to see what happened")
+                
+                console.log("ERROR fetching data")
+                console.log(errorObject)
+            }
+            
+            // THE MONEY SHOT!!!
+            // Here we actually have jquery send the request
+            
+            $.get(spotifySearchURL, params).done(processResults).fail(error);
+        }
+        
+        
+        //function to call when the display results 
+        // button gets clicked
+        function displayData() {
+            
+            if( result == undefined ) {
+                showP("error displaying results!! Results are undefined")
+                //don't do anything else
+                return;
+            } 
+            
+            var items = result.artists.items
+            
+            _.each(items, function(item) { 
+                $results.append("<img src='" + item.images[1].url + "'></img><br/>");      $results.append("<h3>"+ item.name +"</h3>")
+                $results.append("<p> Popularity: "+ item.popularity +"</p>")
+                
+                $results.append("<h4>genres</h4>")
+                $results.append("<ul>")
+                for(var i=0; i < item.genres.length; i++ ) {
+                    $results.append("<li>" + item.genres[i] + " </li>")
+                }
+                $results.append("</ul>")
+            })
+        }
+        
+        
+        // function that will add a string as a paragraph to the
+        // end of the contents in the console element
+        function showP(myStr) {
+            $console.append("<p>" + myStr + "</p>");
+        }
+  
+        //variation of above that will not wrap the string in a
+        // paragraph tag
+        function show(myStr) {
+            $console.append(myStr);
+        }
+        
+        //clear the contents of the box
+        function clear() {
+            $console.empty();
+        }
+        
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        hr();
+      
+    </script>
+    
+</body>
+</html>

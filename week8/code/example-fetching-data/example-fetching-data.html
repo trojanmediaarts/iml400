@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example fetching data</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+</head>
+<body class="w3-container" style="margin-bottom: 50px">
+  <div class="w3-pale-yellow">
+       <h1> Fetching Data Demo</h1>
+       <p> This Demo isolates the steps to fetch data from an API. As we have been discussing in class in order to properly fetch data you have to read the associated documentation for the API.  In this example I am going to stick to the API that we have been working with <a href="https://developer.spotify.com/web-api/search-item/">Spotify Search API</a>.  If you need a refresher on how the API works the review the first section of the previous link.</p>
+
+      <p> This example uses jQuery to fetch the data as a convenience.  <a href="https://lodash.com/docs/4.16.4">Lodash</a> is used to parse the data.  Specifically we are using the following functions to parse the data:</p>
+       <ul class="w3-ul">
+           <li><a href="https://lodash.com/docs/4.16.4#forEach">each</a></li>
+       </ul>
+       
+       <p>You should read the HTML source of this document for comments and explanations for how this is working</p>
+       <hr/>      
+  </div>
+
+     <div>
+      <h2 class="w3-green"> the query</h2>   
+       <div class="w3-container">
+        <p> when you click the query button below the following URL will be fetched by jQuery: <br/>
+        <span class="w3-show-block w3-section"><a href="https://api.spotify.com/v1/search?q=george+russell+sextet&type=artist">https://api.spotify.com/v1/search?q=george+russell+sextet&type=artist</a></span>     
+        If you click the link you will see the data that Spotify will be returning if the connection is made successfully from our code.
+        </p>
+                
+        <h3> mini challenge </h3>
+        <div class="w3-container">
+            What kind of query is this (i.e. what type of information am I searching for)?  <br/>
+            Who or what am I searching for?
+        </div>
+        
+       </div>
+      <h3> query...</h3>
+      <div class="w3-container">
+          <div class="w3-btn-bar w3-pink w3-show-inline-block">
+              <button class="w3-btn">fetch it</button>
+              <button class="w3-btn">display results</button>
+          </div>
+      </div>
+     </div>     
+     <hr/>
+
+    <div>
+        <h2 class="w3-green"> the results</h2>
+        <div id="searchResults" class="w3-container">
+            
+        </div>
+    </div>
+
+    <h2 class="w3-green"> console </h2>
+    <div class="w3-grey" id="myConsole">console
+    </div>
+    
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+        
+        //Notice the formating of my search string? I got this 
+        // formatting by using the Spotify Web API Console to test my query
+        // Go here:
+        // https://developer.spotify.com/web-api/console/get-search-item/
+        //
+        // If you enter your query then you can see how to properly format it to get the results that you desire.
+        
+        var $console = $("#myConsole");        
+        var $results = $("#searchResults");
+        var $btnSearch = $("button:first-child");
+        var $btnDisplay = $("button:last-child");
+        //hide this button until we have data
+        $btnDisplay.hide();
+        
+        // this will have a value once we get some data back
+        var result = undefined;
+        
+        // this is the meat and potatos...or tofu and brocolini 
+        // of this example
+        // Attach an event listener to the search button
+        // If this is unclear then review the example-user-input.html demo
+        
+        $btnSearch.on("click", searchSpotify )
+        $btnDisplay.on("click", displayData)            
+        
+        function searchSpotify() {
+            //Variables
+
+            //the base spotify API url
+            var spotifySearchURL = " https://api.spotify.com/v1/search";
+
+            //an object that will store the parameters
+            //necessary to make the request.
+            //See Request Parameters Section here:
+            // https://developer.spotify.com/web-api/search-item/
+
+            var params = {q: "george+russell+sextet", type: "artist"}
+            
+            //this function will be called if jquery can get all of the data from Spotify
+            function processResults(data) {
+                showP("SUCCESS!!")
+                showP("Retrieved " + data.artists.items.length + " artist hits");
+                
+                //now set the result equal to the data
+                // so other parts of our code can use it
+                result = data;
+                
+                //hide the search button because we are done searching...
+                $btnSearch.hide();
+                //...show the display results because we have something to display now
+                $btnDisplay.show();
+            }
+            
+            //this function will be called if there are any problems
+            function error(errorObject) {
+                showP("OOPs!! there was an error. Open the console to see what happened")
+                
+                console.log("ERROR fetching data")
+                console.log(errorObject)
+            }
+            
+            // THE MONEY SHOT!!!
+            // Here we actually have jquery send the request
+            
+            $.get(spotifySearchURL, params).done(processResults).fail(error);
+        }
+        
+        
+        //function to call when the display results 
+        // button gets clicked
+        function displayData() {
+            
+            if( result == undefined ) {
+                showP("error displaying results!! Results are undefined")
+                //don't do anything else
+                return;
+            } 
+            
+            var items = result.artists.items
+            
+            _.each(items, function(item) { 
+                $results.append("<img src='" + item.images[1].url + "'></img><br/>");      $results.append("<h3>"+ item.name +"</h3>")
+                $results.append("<p> Popularity: "+ item.popularity +"</p>")
+                
+                $results.append("<h4>genres</h4>")
+                $results.append("<ul>")
+                for(var i=0; i < item.genres.length; i++ ) {
+                    $results.append("<li>" + item.genres[i] + " </li>")
+                }
+                $results.append("</ul>")
+            })
+        }
+        
+        
+        // function that will add a string as a paragraph to the
+        // end of the contents in the console element
+        function showP(myStr) {
+            $console.append("<p>" + myStr + "</p>");
+        }
+  
+        //variation of above that will not wrap the string in a
+        // paragraph tag
+        function show(myStr) {
+            $console.append(myStr);
+        }
+        
+        //clear the contents of the box
+        function clear() {
+            $console.empty();
+        }
+        
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        hr();
+      
+    </script>
+    
+</body>
+</html>

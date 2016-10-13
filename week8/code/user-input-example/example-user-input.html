@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user input example</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+</head>
+<body class="w3-container">
+  <div class="w3-pale-yellow">
+       <h1> User Input Demo</h1>
+       <p> In order to make an interactive application we have to obviously have the ability to get interaction from the user and respond to it. Recall that javascript is an event driven language. Events are things that happen in our application that we can identify and respond to.</p>
+       <p> For instance, user clicks, user drags, data coming from an external source are all events that we can detect in javascript. Once we have detected that an event has occurred then our application can respond.  The response is dictated by our code. In other words in our code we can tell the application to do different things when it detects different events.</p>
+
+       <p> This is a demo of getting User Input and changing the application based on that input. This example uses jQuery (not jQuery UI) as a convenience.  The styling is all done by W3.CSS </p>
+       
+       <p>You should read the HTML source of this document for comments and explanations for how this is working</p>
+       <hr/>      
+  </div>
+
+     <div>
+      <h2> a simple UI</h2>   
+       <div class="w3-container w3-center">
+        <input id="sloganInput" class="w3-input w3-border" type="text" placeholder="enter a slogan">    
+        <label for="search" class="w3-text-grey">slogan</label>
+        </div>
+      <h3> ...dynamic response...</h3>
+      <section class="w3-row">
+          <!-- create blank divs so that we have a centered column -->
+          <div class="invisible w3-col m4 l4 ">empty</div>
+          <!-- This is our element that will get the slogan that we entered -->
+          <div id="sloganBox" class="w3-col m4 l4 w3-cyan w3-center w3-xxlarge"></div>
+          <!-- create blank divs so that we have a centered column -->
+          <div class="invisible w3-col m4 l4 ">
+              empty </div>
+      </section>
+     </div>
+
+
+   
+    <div id="myConsole">
+    </div>
+    
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+        // this is just to hide stuff that I ain't ready to show
+        // yet.  You can ignore it for now..
+        var $console = $("#myConsole");        
+        var $box = $("#sloganBox");
+        var $inSlogan = $("#sloganInput")
+        
+        // this is the meat and potatos...or tofu and brocolini 
+        // of this example
+        // This is attaching an "event listener" to the inSlogan 
+        // HTML element.  Whenever that element changes, then the function
+        // with the name equal to the second parameter will be called.
+        //
+        // see here for a tutorial: http://www.w3schools.com/jquery/jquery_events.asp
+        // and
+        // here: 
+        $inSlogan.on("change", handleSloganChange )
+                    
+        $box.hide();
+        
+        // display a message in the box
+        function display(msg) {
+            $box.append("<p>" + msg + "</p>");
+        }
+        
+        function clearDisplay() { $box.empty(); }
+        
+        
+        // function that will add a string as a paragraph to the
+        // end of the contents in the console element
+        function showP(myStr) {
+            $console.append("<p>" + myStr + "</p>");
+        }
+  
+        //variation of above that will not wrap the string in a
+        // paragraph tag
+        function show(myStr) {
+            $console.append(myStr);
+        }
+        
+        //clear the contents of the box
+        function clear() {
+            $console.empty();
+        }
+        
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        function handleSloganChange() {
+            showP("the slogan changed -- " + $inSlogan.val() );
+            clearDisplay();
+            
+            //the value method is a method that jQuery provides to allow 
+            // you to get whatever an input elements value is at
+            // the time of calling,
+            if( $inSlogan.val().length > 0) {
+                $box.show();
+                display($inSlogan.val());                
+            } else {
+                $box.hide();
+            }
+            
+        }
+        hr();
+        
+        /*
+           CHALLENGE: 
+           
+           1) Make the slogan box visible all the time
+           2) Add Two buttons with the labels: Green and Yellow
+           3) Add handlers to the buttons so that when the Green button
+              is clicked the background of the slogan box turns green.
+              When the yellow is clicked the background turns yellow.
+        */
+        
+      
+    </script>
+    
+</body>
+</html>

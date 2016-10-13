@@ -1,0 +1,10 @@
+/* 
+make an element invisible, but still take up space in
+the layout
+*/
+.invisible { visibility: hidden;}
+
+/* 
+opposite of above
+*/
+.visible { visibility: visible; }

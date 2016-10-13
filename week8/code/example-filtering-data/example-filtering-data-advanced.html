@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example filtering data</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+    <script src="js/lib/w3data.js"></script>
+    <script src="data/test-data-prince.js"></script>
+
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+</head>
+<body class="w3-container" style="margin-bottom: 50px">
+  <div class="w3-pale-yellow">
+       <h1> Filtering Data Demo</h1>
+       <p> Thus far we have fetched data and displayed it. We haven't done much in terms of data processing other than select a few fields that we want to present to the user and ignore the remainder.</p>
+       
+       <p>In this example we are going to demonstrate basic sorting and filtering. We will be using the following useful <a href="https://lodash.com/docs/4.16.4">Lodash</a>  functions for this: </p>
+
+       <ul class="w3-ul">
+           <li><a href="https://lodash.com/docs/4.16.4#forEach">each</a></li>
+           <li><a href="https://lodash.com/docs/4.16.4#map">map</a></li>
+           <li><a href="https://lodash.com/docs/4.16.4#filter"></a>filter</li>
+           <li><a href="https://lodash.com/docs/4.16.4#sort"></a>sort</li>           
+       </ul>
+       
+       <p> We won't be fetching data from the server. Instead we will use data that I have already obtained and saved. You can look at the data here: <a href="data/test-data-prince.js">Prince Artist Search Result</a>. The data is the result of an artist search for 'prince'. </p>
+       
+       <p> In this example we will also be using <a href="http://www.w3schools.com/w3css/w3data_home.asp">W3 Data</a> as a template to show the results. If you are </p>
+       <p>You should read the HTML source of this document for comments and explanations for how this is working</p>
+       <hr/>      
+  </div>
+
+   
+     <hr/>
+
+    <div>
+       <h2 class="w3-green">filter genre</h2>
+       <div class="w3-container">
+           <span style="vertical-align:top">Genres</span>
+           <select id="genreFilter" size="10" multiple>
+               <option w3-repeat="genres">{{type}}</option>
+           </select>
+       </div>
+        <h2 class="w3-green"> the results</h2>
+        <div id="searchResults" class="w3-container">
+            <div id="myDataDisplay">
+                <section class="w3-panel w3-khaki w3-section" w3-repeat="items">
+                   <input type="hidden" name="artistId" value="{{id}}">
+                    <h3><a href={{artistURL}}>{{name}}</a></h3>
+                    <img src={{image}} class="w3-show-block" style="max-width: 300px">
+                    <span class=" w3-small w3-text-green">popularity: {{popularity}}</span>
+                    <h4>genres</h4>    
+                        {{genres}}
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="w3-green"> console </h2>
+    <div class="w3-grey" id="myConsole">
+    </div>
+    
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+        var $console = $("#myConsole");        
+        //The data is stored in a variable named: princeSearchResults
+        // Open the data/test-data-prince.js file to see this
+        
+        //lets see how many results we have:
+        showP("we have " + princeSearchResults.artists.items.length + " data items");
+        
+        //First I am going to get the data from the Spotify format into a format that I can use with W3Data
+        
+        //this function just takes a spotify object, accesses its fields
+        // and then creates a new object with just the fields that we need
+        function makeW3DataFormat(aSpotifyObject) {
+            var name = aSpotifyObject.name;
+            var id = aSpotifyObject.id;            
+            var popularity = aSpotifyObject.popularity;
+            var artistURL = aSpotifyObject.external_urls.spotify;            
+            // initialize the image variable to something in case
+            // there is no image for the data
+            var image = "images/www_newtow_ac_uk__files__covers__968361.jpg";
+            
+            if(_.has(aSpotifyObject, "images") && aSpotifyObject.images.length >= 2) {                
+                image = aSpotifyObject.images[1].url;            
+            }
+            
+            var genres = aSpotifyObject.genres;
+            
+            return {name: name, id: id, image: image, popularity: popularity, artistURL: artistURL, genres: genres};
+        }
+        
+        //TODO:
+        // NEED TO DO A SECOND PASS to create Genre objects.
+        // Then for each Div associated with an artist result we
+        // need to run W3DisplayData to populate its genre list
+        /*
+        function makeW3GenreObject(aSpotifyObject) {
+            var genres = aSpotifyObject.genres;
+            var arrayOfGenreTypeObjects = [];
+            
+            for(var i=0; i < genres.length; i++) {
+                var temp = {type: genres[i]}
+                arrayOfGenreTypeObjects.push( temp )
+            }
+            
+        }
+        */
+        
+        //the map function is just like each. The only difference is that it puts the results into an array for you ...so this ...
+        var w3Data = _.map(princeSearchResults.artists.items, makeW3DataFormat);
+        console.log("w3data...")
+        console.log(w3Data)
+        //... is the same as doing this:
+        /*
+            var w3Data  = []; // an empty array
+            
+            _.each(princeSearchResults.artists.items,    function(obj) { 
+                var temp = makeW3DataFormat(obj);
+                //add the object returned from makeW3DataFormat
+                // to the w3Data array
+                
+                w3Data.push(obj);
+            })         
+        */
+        
+        
+        showP("w3Data length = " + w3Data.length);
+        
+        // Ok, now we will take the data and put it into an 
+        // object that we can pass to w3 data for display
+        var displayObj = {items: w3Data};
+        w3DisplayData("myDataDisplay", displayObj);
+        
+        
+        //Now I want to process the data to get a list
+        // of genres that I can use in the Genre Filter list box
+        var uniqueGenres = [];
+        _.each( princeSearchResults.artists.items, function(item) {          
+            uniqueGenres = _.concat( uniqueGenres, item.genres)
+        })
+        
+        showP("unique genres length before making unique = " + uniqueGenres.length);
+        
+        //this will remove the duplicates from the array
+        uniqueGenres = _.uniq(uniqueGenres);
+
+        showP("unique genres length AFTER making unique = " + uniqueGenres.length);
+        
+        //Now we have a list of unique genres so let's wrap them in objects to use in w3Data
+        
+        var genreW3Objects = _.map(uniqueGenres, function(genre) { 
+                                    return {type: genre}
+                                })
+        var genreW3 = {genres: genreW3Objects}
+        w3DisplayData( "genreFilter",genreW3);
+        
+        
+        $("#genreFilter").on("change", function(){ 
+            var selectedGenres = $(this).val();                        
+            //filter the w3Data
+            if( selectedGenres.length > 0 ) {
+                var data = _.filter(w3Data, function(item) { 
+                    console.log(item);
+                    return (_.some(item.genres, function(genre) {
+                                        return _.indexOf( selectedGenres,genre)               
+                                    })) 
+                })
+                console.log(data)
+                w3DisplayData("myDataDisplay", {items: data});
+                
+            }
+        })
+        // function that will add a string as a paragraph to the
+        // end of the contents in the console element
+        function showP(myStr) {
+            $console.append("<p>" + myStr + "</p>");
+        }
+  
+        //variation of above that will not wrap the string in a
+        // paragraph tag
+        function show(myStr) {
+            $console.append(myStr);
+        }
+        
+        //clear the contents of the box
+        function clear() {
+            $console.empty();
+        }
+        
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        hr();
+      
+    </script>
+    
+</body>
+</html>

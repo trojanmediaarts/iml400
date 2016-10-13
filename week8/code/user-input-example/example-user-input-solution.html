@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user input example</title>
+    <link rel="stylesheet" href="css/lib/w3.css">    
+    <link rel="stylesheet" href="css/my.css">
+        
+    <script src="js/lib/jquery-3.1.1.min.js"></script>   
+    <script src="js/lib/lodash.js"> </script>
+
+     <!--
+       Spotify API response from running the following URL:
+        
+        https://api.spotify.com/v1/search?query=%22doom+metal%22&offset=0&limit=5&type=playlist
+        
+        This is a playlist search of "doom metal" and only returning 5 
+        search results
+        
+        the results are stored in the following javascript file to make
+        this example more readable. If you open the file you will see that is just a variable called, serverData, that contains the javascript response.
+        -->        
+</head>
+<body class="w3-container">
+  <div class="w3-pale-yellow">
+       <h1> User Input Challenge</h1>        
+           <ol class="w3-large">
+               <li>Make the slogan box visible all the time</li>
+               <li>Add Two buttons with the labels: Teal and Yellow</li>
+               <li>Add handlers to the buttons so that when the Teal button
+                  is clicked the background of the slogan box turns teal.
+                  When the yellow is clicked the background turns yellow</li>
+          </ol>
+
+      <p> Hint: to make the background of a div element green set the class to: <span class="w3-code w3-show-block w3-teal">w3-teal</span> to make the background yellow set the class to:
+      <span class="w3-code w3-show-block w3-yellow">w3-yellow</span>
+      </p>
+       <hr/>      
+  </div>
+
+     <div>
+      <h2> Challenge </h2>   
+       <div class="w3-section w3-center">
+        <input id="sloganInput" class="w3-input w3-border" type="text" placeholder="enter a slogan">    
+        <label for="search" class="w3-show-block w3-text-grey" style="margin-bottom: 15px">slogan</label>
+        <button class="w3-btn w3-teal">teal</button> 
+        <button class="w3-btn w3-yellow">yellow</button> 
+        </div>
+      
+      <section class="w3-row">
+          <!-- create blank divs so that we have a centered column -->
+          <div class="invisible w3-col m4 l4 ">empty</div>
+          <!-- This is our element that will get the slogan that we entered -->
+          <div id="sloganBox" class="w3-section w3-border w3-round-large w3-col m4 l4 w3-center w3-xxlarge">no slogan</div>
+          <!-- create blank divs so that we have a centered column -->
+          <div class="invisible w3-col m4 l4 ">
+              empty </div>
+      </section>
+     </div>
+
+   
+    <div id="myConsole">
+    </div>
+    
+    
+    <!-- 
+         Script 1
+         Iterating through Data
+     -->      
+    <script>
+
+        var $console = $("#myConsole");        
+        var $box = $("#sloganBox");
+        var $inSlogan = $("#sloganInput")
+        
+        /*               
+            ************ SOLUTION ************ 
+        */
+        
+        
+        // 1. get the elements that we want using jquery
+        var $btnTeal = $("button[class*=w3-teal]");
+        var $btnYellow = $("button.w3-yellow");
+        
+        // 1. test to make sure we got them
+        //$btnTeal.show();
+        //$btnYellow.show();
+        
+        // 2. Testing to make sure that we can capture the events
+        /*
+        $btnTeal.on("click", function() { 
+            showP('clicked teal');
+        });
+        
+        $btnYellow.on("click", function() {
+            showP('clicked yellow');
+        })
+        */
+        
+        // 3. If we can capture the basic event
+        //    now we can use logic to do things when we 
+        //    detect a click event
+        
+        function setSloganBackground( aColor ) {
+            //get the current class of the slogan box
+            var _currentClass = $inSlogan.hasClass
+            if(aColor == 'yellow') {
+                if( $box.hasClass("w3-teal") ) {
+                    $box.removeClass("w3-teal");
+                }
+                
+                $box.addClass("w3-yellow");
+            } else if(aColor == 'teal') {
+                if( $box.hasClass("w3-yellow")) {
+                    $box.removeClass("w3-yellow");
+                }
+                $box.addClass("w3-teal");
+            }
+        }
+
+        // testing the function to make sure that it works
+        /*
+        setSloganBackground('yellow');
+        setSloganBackground('teal');
+        */
+        
+        $btnTeal.on("click", function() { setSloganBackground('teal'); })
+        $btnYellow.on("click", function() { setSloganBackground('yellow'); })
+        
+        
+        /* ************** END SOLUTION ************** */                                      
+        
+        
+        //set the change handler for the slogan box
+        $inSlogan.on("change", handleSloganChange )
+                    
+        
+//        $box.hide();
+        
+        // display a message in the box
+        function display(msg) {
+            $box.append("<p>" + msg + "</p>");
+        }
+        
+        function clearDisplay() { $box.empty(); }
+        
+        
+        // function that will add a string as a paragraph to the
+        // end of the contents in the console element
+        function showP(myStr) {
+            $console.append("<p>" + myStr + "</p>");
+        }
+  
+        //variation of above that will not wrap the string in a
+        // paragraph tag
+        function show(myStr) {
+            $console.append(myStr);
+        }
+        
+        //clear the contents of the box
+        function clear() {
+            $console.empty();
+        }
+        
+        function hr() {
+            show("<hr/>");
+        }
+        
+        function handleSloganChange() {
+            showP("the slogan changed -- " + $inSlogan.val() );
+            clearDisplay();
+            
+            //the value method is a method that jQuery provides to allow 
+            // you to get whatever an input elements value is at
+            // the time of calling,
+            if( $inSlogan.val().length > 0) {
+                $box.show();
+                display($inSlogan.val());                
+            } else {
+                $box.hide();
+            }
+            
+        }
+        hr();
+              
+    </script>
+    
+</body>
+</html>
