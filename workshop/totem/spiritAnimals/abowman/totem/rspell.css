@@ -20,14 +20,8 @@
 .prpl-d4 {background-color:#311b92 }
 .beige {background-color: beige}
 
-
-#container {
-  position:absolute;
-  overflow: hidden;
-}
-
 .grid {
-  background-image: url(./400x400Grid.png);
+  background-image: url(../images/400x400Grid.png);
   border-radius: 0%;
 }
 
@@ -108,7 +102,7 @@ section {
   border-radius: 35px ; /* width / 2.0 */
 }
 
-#rspell-pupil-L, #rspell-pupil-R {
+.pupil {
   position: absolute;
   left: 30%;
   top: 30%;
@@ -117,7 +111,7 @@ section {
   height: 40%;
 }
 
-#rspell-pupil-L, #rspell-pupil-R {  
+.pupil {  
   border-radius: 50% ; /* width / 2.0 */
 }
 

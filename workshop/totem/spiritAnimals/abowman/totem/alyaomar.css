@@ -1,25 +1,20 @@
-div {-webkit-transform: scale(.5);
+#omar-container {-webkit-transform: scale(.5);
      -moz-transform: scale(.5);
        -o-transform: scale(.5);
           transform: scale(.5);
+    position: absolute;
     height: 300px;
     width: 300px;
+    left: 275px;
+    top: 550px;
 
 }
-<<<<<<< Updated upstream
-#alyaomar-face {
-=======
 #omar-face {
->>>>>>> Stashed changes
     position: absolute;
     left: 200px;
     top: 100px;
 }
-<<<<<<< Updated upstream
-#alyaomar-face:before,#alyaomar-face:after {
-=======
 #omar-face:before,#omar-face:after {
->>>>>>> Stashed changes
     content: '';
     width: 40px;
     height: 130px;
@@ -41,11 +36,7 @@ div {-webkit-transform: scale(.5);
     -o-transform-origin: 0 100%;
     transform-origin: 0 100%;
 }
-<<<<<<< Updated upstream
-#alyaomar-face:after {
-=======
 #omar-face:after {
->>>>>>> Stashed changes
     left: 30;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -58,11 +49,7 @@ div {-webkit-transform: scale(.5);
     -o-transform-origin: 100% 100%;
     transform-origin: 100% 100%;
 }
-<<<<<<< Updated upstream
-#alyaomar-body {
-=======
 #omar-body {
->>>>>>> Stashed changes
     width: 90px;
     height: 115px;
     background: red;
@@ -70,11 +57,7 @@ div {-webkit-transform: scale(.5);
     bottom: 120px;
     left: 305px;
 }
-<<<<<<< Updated upstream
-#alyaomar-body:before {
-=======
 #omar-body:before {
->>>>>>> Stashed changes
     content: '';
     width: 0;
     height: 0;
@@ -85,11 +68,7 @@ div {-webkit-transform: scale(.5);
     border-right: 45px solid transparent;
     border-bottom: 20px solid #fc5e5e;
 }
-<<<<<<< Updated upstream
-#alyaomar-body:after {
-=======
 #omar-body:after {
->>>>>>> Stashed changes
     content: '';
     width: 0;
     height: 0;
@@ -100,11 +79,7 @@ div {-webkit-transform: scale(.5);
     border-right: 45px solid transparent;
     border-top: 25px solid red;
 }
-<<<<<<< Updated upstream
-#alyaomar-lefttriangle {
-=======
 #omar-lefttriangle {
->>>>>>> Stashed changes
     width: 0;
     height: 0;
   position: absolute;
@@ -115,11 +90,7 @@ div {-webkit-transform: scale(.5);
     left: 100px;
   transform: rotate(11deg);
 }
-<<<<<<< Updated upstream
-#alyaomar-righttriangle {
-=======
 #omar-righttriangle {
->>>>>>> Stashed changes
     width: 0;
     height: 0;
   position: absolute;
@@ -132,11 +103,7 @@ div {-webkit-transform: scale(.5);
 }
 
 
-<<<<<<< Updated upstream
-#alyaomar-toprightwing {
-=======
 #omar-toprightwing {
->>>>>>> Stashed changes
    width: 0;
     height: 0;
   position: absolute;
@@ -147,11 +114,7 @@ div {-webkit-transform: scale(.5);
     left: 419px;
 }
 
-<<<<<<< Updated upstream
-#alyaomar-topleftwing {
-=======
 #omar-topleftwing {
->>>>>>> Stashed changes
    width: 0;
     height: 0;
   position: absolute;
@@ -161,11 +124,7 @@ div {-webkit-transform: scale(.5);
     top: -40px;
     left: -240px;
 }
-<<<<<<< Updated upstream
-#alyaomar-lastwingleft {
-=======
 #omar-lastwingleft {
->>>>>>> Stashed changes
      width: 0;
     height: 0;
     position: absolute;
@@ -176,11 +135,7 @@ div {-webkit-transform: scale(.5);
     left: 645px;
      transform: rotate(45deg)
 }
-<<<<<<< Updated upstream
-#alyaomar-lastwingright {
-=======
 #omar-lastwingright {
->>>>>>> Stashed changes
      width: 0;
     height: 0;
     position: absolute;
@@ -191,11 +146,7 @@ div {-webkit-transform: scale(.5);
     left: -35px;
      transform: rotate(135deg)
 }
-<<<<<<< Updated upstream
-#alyaomar-butterflybutt {
-=======
 #omar-butterflybutt {
->>>>>>> Stashed changes
     position: absolute;
   width: 0;
     height: 0;
@@ -206,11 +157,7 @@ div {-webkit-transform: scale(.5);
     left: 405px;
     transform: rotate(210deg)
 }
-<<<<<<< Updated upstream
-#alyaomar-butterflybuttright {
-=======
 #omar-butterflybuttright {
->>>>>>> Stashed changes
     position: absolute;
   width: 0;
     height: 0;
@@ -221,11 +168,7 @@ div {-webkit-transform: scale(.5);
     left: 325px;
     transform: rotate(120deg)
 }
-<<<<<<< Updated upstream
-#alyaomar-butterleftbutt {
-=======
 #omar-butterleftbutt {
->>>>>>> Stashed changes
     position: absolute;
   width: 0;
     height: 0;
@@ -236,11 +179,7 @@ div {-webkit-transform: scale(.5);
     left: 135px;
     transform: rotate(240deg)
 }
-<<<<<<< Updated upstream
-#alyaomar-butterflybuttleft {
-=======
 #omar-butterflybuttleft {
->>>>>>> Stashed changes
     position: absolute;
   width: 0;
     height: 0;
@@ -253,11 +192,7 @@ div {-webkit-transform: scale(.5);
 }
 
 
-<<<<<<< Updated upstream
-#alyaomar-bottomleftwing {
-=======
 #omar-bottomleftwing {
->>>>>>> Stashed changes
     height: 0;
     width: 60px;
    position: absolute;
@@ -268,11 +203,7 @@ div {-webkit-transform: scale(.5);
     top: 40px;
   left: 135px;
 }
-<<<<<<< Updated upstream
-#alyaomar-bottomrightwing {
-=======
 #omar-bottomrightwing {
->>>>>>> Stashed changes
     height: 0;
     width: 60px;
    position: absolute;
@@ -283,11 +214,7 @@ div {-webkit-transform: scale(.5);
     top: 40px;
   left: 445px;
 }
-<<<<<<< Updated upstream
-#alyaomar-tail {
-=======
 #omar-tail {
->>>>>>> Stashed changes
     height: 0;
     width: 60px;
     border-bottom: 180px solid red;
@@ -297,11 +224,7 @@ div {-webkit-transform: scale(.5);
     top: 100px;
     left: 300px;
 }
-<<<<<<< Updated upstream
-#alyaomar-triangle_down {
-=======
 #omar-triangle_down {
->>>>>>> Stashed changes
     width: 0;
     height: 0;
     border-top: 50px solid #20a3bf;

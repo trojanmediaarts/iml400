@@ -1,0 +1,98 @@
+/*turtle css*/
+
+.turtleContainer {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	background-color: #1693a5;
+	float: right;
+	margin-top: 2em;
+	margin-right: 10%;
+	position: absolute;
+	top: 1150px;
+	left: 190px;
+}
+
+.turtleBody {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	background-color: #CFFFDD;
+	border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
+	-webkit-border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
+	border: 2px solid #7fff24;
+	-webkit-transform: rotate(90deg);
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.turtleHead {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background-color: #CFFFDD;
+	border: 2px solid #7fff24;
+	border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
+	-webkit-border-radius: 80% 0 55% 50%/ 55% 0 80% 50%;
+	-webkit-transform: rotate(-90deg);
+	position: absolute;
+	margin-top: 45px;
+	margin-left: 45px;
+}
+
+.turtleHand {
+	display: inline-block;
+	width: 30px;
+	height: 45px;
+	background-color: #CFFFDD;
+	border: 2px solid #7fff24;
+	border-radius: 55% 50% 80% 0/80% 50% 80% 0;
+	-webkit-border-radius: 55% 50% 80% 0/80% 50% 80% 0;
+	-webkit-transform: rotate(35deg);
+	position: absolute;
+	top: 155px;
+	left: 30px;
+}
+
+.turtleHandTwo {
+	display: inline-block;
+	width: 30px;
+	height: 45px;
+	background-color: #CFFFDD;
+	border: 2px solid #7fff24;
+	border-radius: 50% 60% 0 80%/60% 75% 5% 60%;
+	-webkit-border-radius: 50% 60% 0 80%/60% 75% 5% 60%;
+	-webkit-transform: rotate(-125deg);
+	position: absolute;
+	top: 32px;
+	right: 85px;
+}
+
+.turtleFoot {
+	display: inline-block;
+	width: 30px;
+	height: 50px;
+	background-color: #CFFFDD;
+	border: 2px solid #7fff24;
+	border-radius: 50% 60% 0 90%/75% 70% 0 60%;
+	-webkit-border-radius: 50% 60% 0 90%/75% 70% 0 60%;
+	-webkit-transform: rotate(0deg);
+	position: absolute;
+	bottom: 20px;
+	left: 140px;
+}
+
+.turtleFootTwo {
+	display: inline-block;
+	width: 30px;
+	height: 50px;
+	background-color: #CFFFDD;
+	border: 2px solid #7fff24;
+	border-radius: 50% 60% 90% 0/75% 70% 60% 0;
+	-webkit-border-radius: 50% 60% 90% 0/75% 70% 60% 0;
+	-webkit-transform: rotate(-75deg);
+	position: absolute;
+	bottom: 110px;
+	right: 30px;
+}
