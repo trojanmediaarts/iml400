@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="yedamkim.css">
   <link rel="stylesheet" href="tammydo.css">
   <link rel="stylesheet" type="text/css" href="saniyapo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -92,6 +94,56 @@
 </body>
 <script text = "text/javascript">
   
+  var nose = $("#yedamkim-nose2");
+  function changeNose(){
+    nose.animate({
+      borderBottomColor: "red"
+    }, 1000,function(){
+      console.log("hey")
+    });
+    nose.animate({
+      borderBottomColor: "#b35900"
+    }, 1000,function(){
+      changeNose()
+    });
+  }
+  changeNose();
+
+  var shell = $("#mvrahas-shell");
+  function changeShell(){
+    shell.animate({
+      backgroundColor: "purple"
+    }, 3000,function(){
+      console.log("hey")
+    });
+    shell.animate({
+      backgroundColor: "SkyBlue"
+    }, 3000,function(){
+      changeShell()
+    });
+  }
+  changeShell();
+
+  var pupilL = $("#tammydo_pupil_L");
+  var pupilR = $("#tammydo_pupil_R");
+  function changeEyes(){
+    var eye = [pupilL, pupilR];
+    for(i=0; i<2; i++){
+    eye[i].animate({
+      width: "10px"
+    }, 3000,function(){
+      console.log("hey")
+    });
+    eye[i].animate({
+      width: "30px"
+    }, 3000,function(){
+      changeEyes()
+    });
+    }
+  }
+  changeEyes();
+
+  /*
   function yedamkim_changeStripesColor(){
   var $topStripe = document.getElementById("yedamkim-stripes")
   var $bottomStripe = document.getElementById("yedamkim-stripes2")
@@ -99,7 +151,9 @@
   $bottomStripe.style.backgroundColor = "red" <!--change the color here--> 
   }
   yedamkim_changeStripesColor()
+  */
 
+  /*
   function tammydoChangeAnimal_3 (BodyColor) {
     var $OwlBody = document.getElementById("tammydo_Owlbody")
     $OwlBody.style.backgroundColor = BodyColor
@@ -121,5 +175,7 @@
     $Eye_R.style.backgroundColor= eyeColor
   }
   saniyapoChangeTurtle_1("red")
+  */
+
 </script>
 </body>
