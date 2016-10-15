@@ -128,8 +128,8 @@
         // object that we can pass to w3 data for display
 
             
-        var displayObj = {items: w3Data};
-        w3DisplayData("myDataDisplay", displayObj);
+        //var displayObj = {items: w3Data};
+        //w3DisplayData("myDataDisplay", displayObj);
         
         
         //But it might be nice to have the data sorted by popularity
@@ -159,14 +159,14 @@
         // take the W3Data and filter it before we display it
         // We will use the lodash filter function for this
         
-        /*
+        
         var filtered = _.filter(w3Data, function(obj){ 
                             console.log(obj.popularity >= 50);
                             return obj.popularity >= 50;
                         })
         var displayObj = {items: filtered}
         w3DisplayData("myDataDisplay", displayObj);
-        */
+        
         
         // I'd like to display the results sorted by their popularity field. 
         // If you aren't sure how to get this then check the Spotify API Reference: https://developer.spotify.com/web-api/search-item/#Request%20Parameters

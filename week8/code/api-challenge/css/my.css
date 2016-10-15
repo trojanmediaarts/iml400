@@ -1,0 +1,32 @@
+p {
+    margin:0px;
+    padding:0px;
+}
+
+.italicize {
+    font-style: italic;
+}
+
+a, a:visited {    
+    text-decoration: none;
+    color: darkgray;
+}
+
+a:hover {
+    border-bottom: dotted 1px darkgray;
+}
+
+img { width: 300px; height:300px;}
+
+.righty { float: right}
+
+.clear { clear: both;}
+
+#queryOptions span {
+    display: inline-block;
+    margin: 0px 10px;    
+}
+
+#queryOptions span label {
+    vertical-align: middle;
+}

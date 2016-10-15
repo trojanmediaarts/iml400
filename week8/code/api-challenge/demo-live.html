@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo HTML</title>
+    <link rel="stylesheet" href="css/lib/w3.css">
+    
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+    <script src="js/lib/w3data.js"></script>
+    
+</head>
+<body class="w3-container">
+   <h2>Live Demo</h2>
+   <p> the data appearing below is from a live query of the spotify API</p>
+   <hr/>
+   
+    <div id="result">
+     
+      <div w3-repeat="stuff"> 
+          <h2>{{id}} -- {{pop}} -- {{name}}</h2>
+          
+      </div>      
+    </div>
+    
+    <script>
+
+        
+        var url = "https://api.spotify.com/v1/search?";
+        
+       var param = {q: "Muse", type: "artist"}
+        var result;
+        
+        
+        function getMeTheArtistData( obj ) {
+            return {id: obj.id, name: obj.name, pop: obj.popularity};
+        }        
+        
+        
+        //this only gets called if jQuery gets data back from Spotify
+        
+        function onReceivedData(data) {
+                console.log('got a result')
+                result = data 
+                           
+                //this is the call that goes through all of the result items
+                // and converts it into a list of objects that w3Data can use
+                var w3ObjectList = _.map( result.artists.items, getMeTheArtistData  )
+
+                // as an example here I am filtering the data to only return 
+                // objects with a popularity above a threshold
+                var filteredPopular = _.filter( w3ObjectList,   function(obj) {  
+                    return obj.pop >= 0;
+                    })
+                
+                var w3Data = {stuff: filteredPopular}
+                
+                //Pass it to w3 to display
+                w3DisplayData("result",w3Data);            
+        }
+        
+        
+        //this only gets called if jQuery does NOT get data back from Spotify
+        
+        function onFailedData(err) {
+            console.log('ERROR getting a result');
+            console.log(err);            
+        }
+        
+        
+        //make a request to spotify and then call the right function
+        // depending on what spotify returns
+        
+        $.get(url,param).done(onReceivedData).fail(onFailedData);
+        
+        
+        
+    </script>
+</body>
+</html>

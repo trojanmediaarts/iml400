@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo HTML</title>
+    <link rel="stylesheet" href="css/lib/w3.css">
+    
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/lodash.js"></script>
+    <script src="js/lib/w3data.js"></script>
+    
+    <script src="data/demo-process-data.js"></script>
+</head>
+<body class="w3-container">
+   <h2>Demo Static</h2>
+   <p> the results below are running from static data file with only 5 data entries</p>
+     <hr/>
+     
+    <div id="result">
+      <div w3-repeat="stuff"> 
+          <h2>{{id}} -- {{pop}} -- {{name}}</h2>
+          
+      </div>      
+    </div>
+    
+    <script>
+
+        
+        var w3ObjectList = _.map( demoData.artists.items, getMeTheArtistData  )
+        
+        function getMeTheArtistData( obj ) {
+            return {id: obj.id, name: obj.name, pop: obj.popularity};
+        }
+        
+        console.log(w3ObjectList);
+        
+        var filteredPopular = _.filter( w3ObjectList, function(obj) {  
+            return obj.pop >= 20;
+        })
+        
+        // uncomment to see unfiltered data
+        var w3Data = {stuff: w3ObjectList}
+        
+        // uncomment to see filtered data
+        // var w3Data = {stuff: filteredPopular}
+        
+        
+        console.log(w3Data);
+        console.log("********");
+        console.log(filteredPopular)
+        
+        //Now let W3 Data know that we have data
+        w3DisplayData("result",w3Data);
+    
+        
+    
+        
+        
+        
+    </script>
+</body>
+</html>

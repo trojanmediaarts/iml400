@@ -44,6 +44,7 @@
         <section class="w3-panel w3-khaki w3-section" w3-repeat="items">
             <h3>{{name}}</h3>
             <span class=" w3-small w3-text-green">{{trackCount}}</span>
+            <a class="w3-large" href="{{userURL}}">{{artist}}</a>
         </section>
     </div>
     
@@ -181,13 +182,16 @@
         var playlistObjects = [];  // this is an array with nothing in it
         
         function makeMeAW3DataObject( someObject ) {
-            var aTempObject = { "name": someObject.name, "trackCount": someObject.tracks.total };
+            var aTempObject = { "name": someObject.name, "trackCount": someObject.tracks.total, "artist" : someObject.owner.id, "userURL" : someObject.owner.external_urls.spotify };
             
             playlistObjects.push( aTempObject );    
         }
         
         // let's test this function out with 1 item from the playlist
         makeMeAW3DataObject(playlists[0]);
+        
+        
+        
         showP("testing out the function that takes playlist objects and makes an array of objects that we can use in W3 Data...")
         
         showP("...the playListObjects array has <br/>" + playlistObjects.length + "<br/> item(s) in it...the first one is:")
@@ -225,6 +229,8 @@
         
         
         $("#myDataDisplay").append("<hr/><h2>That's it for part 2!!</h2>");
+        
+        
       
     </script>
 </body>
