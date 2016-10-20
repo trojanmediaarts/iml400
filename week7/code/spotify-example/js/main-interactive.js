@@ -1,6 +1,6 @@
 var result = {};
 
-$(document).ready(function() {
+$(document).ready(function () {
     /*
         VARIABLES - CONSTANT
     */
@@ -28,11 +28,15 @@ $(document).ready(function() {
     */
     
     //Radio Buttons
+<<<<<<< Updated upstream
     $radioBtn.on("change", function() {
+=======
+    $radioBtn.on("change", function () {
+>>>>>>> Stashed changes
         var value = $(this).val();
         //all this does is capitalize the first letter
-        value = value.substr(0,1).toUpperCase() + 
-                value.substring(1,value.length) ;
+        value = value.substr(0,1).toUpperCase() +
+                value.substring(1, value.length) ;
         
         //update the search label text with the new value
         $searchLabel.text(value + " Name") 
@@ -67,7 +71,7 @@ $(document).ready(function() {
     
     function onDataReceive(response) {
         console.log("got data response");        
-        //result["data"] = data.artists.items;
+       // result["data"] = data.artists.items;
         
         enableSearch();
         parseResults(response);

@@ -43,8 +43,13 @@
     <div id="myDataDisplay">
         <section class="w3-panel w3-khaki w3-section" w3-repeat="items">
             <h3>{{name}}</h3>
+            
             <span class=" w3-small w3-text-green">{{trackCount}}</span>
+<<<<<<< Updated upstream
             <a class="w3-large" href="{{userURL}}">{{artist}}</a>
+=======
+            <a class="w3-large" href=""{{artist}}</a>
+>>>>>>> Stashed changes
         </section>
     </div>
     
@@ -182,7 +187,11 @@
         var playlistObjects = [];  // this is an array with nothing in it
         
         function makeMeAW3DataObject( someObject ) {
+<<<<<<< Updated upstream
             var aTempObject = { "name": someObject.name, "trackCount": someObject.tracks.total, "artist" : someObject.owner.id, "userURL" : someObject.owner.external_urls.spotify };
+=======
+            var aTempObject = { "name": someObject.name, "trackCount": someObject.tracks.total, "artist" : someObject.owner.id };
+>>>>>>> Stashed changes
             
             playlistObjects.push( aTempObject );    
         }
@@ -206,6 +215,8 @@
         playlistObjects = [];
         
         _.each(playlists, makeMeAW3DataObject);
+        
+        //after this is run, this make me a W3 Data... after its called 5 items, it's pushed 5 objects onto this playlist"
         
         showP("after running lodash the playList Ojects array has <br/>" + playlistObjects.length +" <br/> objects");
         
