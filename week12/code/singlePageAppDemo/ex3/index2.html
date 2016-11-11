@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 3</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/w3data.js"></script>
+</head>
+<body class="w3-container">
+    <h1>Example 3</h1>
+    <p> Cycling through pages by changing the HashCode in the URL
+    <span class="w3-codespan">window.location.hash</span> value in javascript</p>
+    
+    <h3>recall...</h3>
+    <p>
+    that the query parameter of a URL is the part after the <span class="w3-codespan">#</span> for instance:
+    <span class="w3-code">http://someurl.com/somePage.html#putsomethingHere</span>
+    </p>
+    
+    <p>Everything after the <span class="w3-codespan">#</span> is the hashCode.</p>
+    
+    <hr/>
+    
+    <section id="content">        
+        <div id="p1" class="w3-card-4 w3-section w3-container" style="padding-bottom: 16px">    
+            <h3> choose a favorite color</h3>
+            <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="red"><label class="w3-validate">red</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="blue"><label class="w3-validate">blue</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="green"><label class="w3-validate">green</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="yellow"><label class="w3-validate">yellow</label>
+        </div>
+
+        <div id="p2" class="w3-card-4 w3-section w3-container" style="padding-bottom: 16px">    
+            <h3> choose a favorite animal</h3>
+            <input id="rbRed" class="w3-radio" type="radio" name="favAnimal" value="dog"><label class="w3-validate">dog</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favAnimal" value="llama"><label class="w3-validate">llama</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favAnimal" value="tarantula"><label class="w3-validate">tarantula</label>
+            <input id="rbRed" class="w3-radio" type="radio" name="favAnimal" value="aardvark"><label class="w3-validate">aardvark</label>
+        </div>
+    </section>
+                
+    <div class="w3-section">
+            <button>Next Page</button>
+    </div>
+    <script>
+        $("div#p2").toggle();
+        //make sure now radio buttons are selected
+        $("input[name=favColor]:radio").attr("checked",false);
+        
+        //when they select a radio button then enable the button
+        $("input[name=favColor]:radio").on("change",
+                                          function() {    $("button").attr("disabled",false);
+                                        });
+        
+        
+        $("button").on("click", function(){ 
+                    var selectedColor = $("input[name=favColor]:radio:checked").val();
+            
+                    window.location.hash = "faveColor="+selectedColor;
+                })
+        //make sure the button is not enabled because they have not selected
+        //a color yet
+        $("button").attr("disabled",true);
+        
+        $(window).on("hashchange", function() {
+            var hash = window.location.hash;
+            var hashObj = hashStringToObject()
+            
+            $("#content div").hide();
+            
+            if(hashObj.page == "p1") {
+                $("#content #p1").toggle();
+            } else if( hashObj.page == "p2") {
+                $("#content #p2").toggle();
+            }
+        })
+        
+        
+        function hashStringToObject() {
+            var str = window.location.hash,
+                qry = str.split("#")[1];
+            var res;
+            
+            if(_.indexOf(qry,'&') >= 0) {
+                res = _.map(qry.split('&'), function (i) {
+                                return i.split('=');
+                            })
+                res = _.fromPairs(res)
+            }else {
+                res = _.fromPairs([qry.split('=')]);
+            }   
+            return res
+        }
+    </script>
+</body>
+</html>

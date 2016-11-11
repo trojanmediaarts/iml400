@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/w3data.js"></script>
+</head>
+<body class="w3-container">
+    <h1>Demos</h1>
+    <p> Demos of 3 different approaches to managing HTML page changes with Javascript</p>
+    
+    <ul>
+        <li>
+          <a href="ex1">Example 1: Use javascript to change your browser page</a>
+        </li>
+        <li>
+          <a href="ex2">Example 2: Example 1 passing data b/w pages</a>
+        </li>
+        <li>
+          <a href="ex2">Example 3: Like Example 2, but uses URL HashCode</a>
+        </li>
+    </ul>
+
+    <script>
+        $("button").on("click", function(){ 
+                    window.location = "page2.html";
+                })
+    </script>
+</body>
+</html>

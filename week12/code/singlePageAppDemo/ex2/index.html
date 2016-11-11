@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 2</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/w3data.js"></script>
+</head>
+<body class="w3-container">
+    <h1>Example 2</h1>
+    <p> example of passing data between pages using the query parameter
+    <span class="w3-codespan">window.location.search</span> value in javascript</p>
+    <h3>recall...</h3>
+    <p>
+    that the query parameter of a URL is the part after the <span class="w3-codespan">?</span> for instance:
+    <span class="w3-code">http://someurl.com/somePage.html?tag1=value1&tag2=value2</span>
+    </p>
+    
+    <p>Everything after the <span class="w3-codespan">?</span> is the query parameter or query string.</p>
+    
+    <hr/>
+    
+    <div class="w3-card-4 w3-container" style="padding-bottom: 16px">
+    
+    <h3> choose a favorite color</h3>
+    <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="red"><label class="w3-validate">red</label>
+    <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="blue"><label class="w3-validate">blue</label>
+    <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="green"><label class="w3-validate">green</label>
+    <input id="rbRed" class="w3-radio" type="radio" name="favColor" value="yellow"><label class="w3-validate">yellow</label>
+    </div>
+    
+    <div class="w3-section">
+            <button>Next Page</button>
+    </div>
+    <script>
+        //make sure now radio buttons are selected
+        $("input[name=favColor]:radio").attr("checked",false);
+        
+        //when they select a radio button then enable the button
+        $("input[name=favColor]:radio").on("change",
+                                          function() {    $("button").attr("disabled",false);
+                                        });
+        
+        
+        $("button").on("click", function(){ 
+                    var selectedColor = $("input[name=favColor]:radio:checked").val();
+                    var param = $.param({"faveColor": selectedColor})
+                    $("div.w3-section").append(param);
+            
+                    window.location.href = "page2.html" + "?" + param;
+                })
+        //make sure the button is not enabled because they have not selected
+        //a color yet
+        $("button").attr("disabled",true);
+    </script>
+</body>
+</html>

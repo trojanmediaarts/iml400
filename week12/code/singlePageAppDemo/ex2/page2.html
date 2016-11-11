@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 2 - Page 2</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/lodash.js"></script>
+    <script src="js/w3data.js"></script>
+</head>
+<body class="w3-container">
+    <h1>Example 2 - Page 2</h1>
+    <div class="w3-container">
+        <div id="page1Result" class="w3-half" style="height: 200px"> 
+            <p id="faveColor"></p>
+        </div>
+    </div>
+    
+    
+    <script>
+        var queryStringObj = queryStringToObject();
+        
+        $("p").text("you selected the color: " + queryStringObj.faveColor);
+        $("#page1Result").addClass("w3-"+queryStringObj.faveColor);
+        
+        var height = queryStringObj.size;
+        if( height ) {
+            $("#page1Result").css("height",height+"px")
+            
+        }
+        $("button").on("click", function(){ 
+                    window.location = "page3.html";
+                })
+        
+        
+        function queryStringToObject() {
+            var str = window.location.search,
+                qry = str.split("?")[1];
+            var res;
+            
+            if(_.indexOf(qry,'&') >= 0) {
+                res = _.map(qry.split('&'), function (i) {
+                                return i.split('=');
+                            })
+                res = _.fromPairs(res)
+            }else {
+                res = _.fromPairs([qry.split('=')]);
+            }   
+            return res
+        }
+    </script>
+</body>
+</html>
