@@ -13,7 +13,7 @@ $(document).ready( function() {
         ]
 
 
-        var cursor = 1;
+        var cursor = 2;
 
         function getCurrentQuestion() {
             return quiz[cursor].question;
@@ -64,7 +64,7 @@ $(document).ready( function() {
         //read in the score as of now
         var currentScore = Number(window.location.hash.substr(1));
     
-    console.log("YOu are on page 2 with score = " + currentScore);
+    console.log("YOu are on page 3 with score = " + currentScore);
     
         $("button").on("click", function(){            
             var score = $("input[name=answers]:checked").val()
