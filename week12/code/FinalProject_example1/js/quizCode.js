@@ -1,9 +1,5 @@
 $(document).ready( function() { 
 
-        var q = {question:"What is 2+2?",
-                 options: [3,5,8,4],
-                 answer: 3}
-
         var quiz = [  
         {question:"What is 2+2?",  options: [3,5,8,4],  answer: 3, nextPage: "page1.html"},
         {question:"What is 2+3?",  options: [3,50,5,4], answer: 2, nextPage: "page2.html"},
@@ -12,9 +8,20 @@ $(document).ready( function() {
         {question:"What is 2+20?", options: [22,5,8,4], answer: 0, nextPage: "page5.html"}
         ]
 
+        
 
-        var cursor = window.location.pathname.substr(5,1);
-
+        var cursor;
+        //this searches the current URL for the string 'page'
+        //if it doesn't find it then assume we are on the index page
+        if(window.location.pathname.search('page') == -1 ) {
+            cursor = 0;
+        } else {
+            //remember the cursor equals the page number
+            //this just gets the pagenumber
+            cursor = window.location.pathname.match("page(\\d\+).html")[1];
+        }
+    
+        console.log("cursor = " + cursor);
         //This is a hack to be fast and done so you can go home..
         //if the cursor is on 5 then this is the last page and we should
         // calculate the percentage score
@@ -27,15 +34,16 @@ $(document).ready( function() {
             $("body").append("<h1>you scored: " + score + "% </h1>")
         }
     
-    
+        
     
         function getCurrentQuestion() {
             return quiz[cursor].question;
         }
 
         function loadCurrentQuestion() {
+            console.log(quiz[cursor]);
             w3DisplayData("question", quiz[cursor]);
-
+            
             // get the options for the current question
             var responses = quiz[cursor].options;
 
@@ -74,6 +82,7 @@ $(document).ready( function() {
 
         //If we are not on page 5 then load the question
         if( cursor != 5 ) {
+            
             loadCurrentQuestion(); 
         }
     
