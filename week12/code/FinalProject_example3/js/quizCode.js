@@ -17,7 +17,20 @@ $(document).ready( function() {
         ]
 
 
-        var cursor = window.location.pathname.substr(5,1);
+        
+        var cursor;
+        //this searches the current URL for the string 'page'
+        //if it doesn't find it then assume we are on the index page
+        if(window.location.pathname.search('page') == -1 ) {
+            cursor = 0;
+        } else {
+            //remember the cursor equals the page number
+            //this just gets the pagenumber
+            cursor = window.location.pathname.match("page(\\d\+).html")[1];
+        }
+    
+        console.log("cursor = " + cursor);
+        
         var tally = {};
 
         //LET's parse the hash in the URL to populate the tally object
@@ -25,11 +38,15 @@ $(document).ready( function() {
             var hashParameters = location.hash.substr(1);
             var hashArray = hashParameters.split(",");
             var fruitOrder = ["mango", "pomegranate", "grape", "dragonfruit"]
-            for( var i=0; i < hashArray.length; i++) {
+            for( var i=0; i < fruitOrder.length; i++) {
                 var theFruitForThisHashPosition = fruitOrder[i];
-
-                tally[ theFruitForThisHashPosition ] = Number(hashArray[i]);
-
+                var val;
+                if( i < hashArray.length) {
+                    val = Number(hashArray[i]);
+                } else {
+                    val = 0;
+                }
+                tally[ theFruitForThisHashPosition ] = val;
             }
             console.log('I parsed the URL to this TALLY: ')
             console.log(tally);
@@ -57,6 +74,8 @@ $(document).ready( function() {
                 }
             })
             
+            $("body").empty();
+            $("body").html("<h1>You are a " + maxFruit + "</h1>")
             console.log(maxTally, maxFruit)
 
         }
@@ -110,32 +129,41 @@ $(document).ready( function() {
         //read in the score as of now
         var currentScore = Number(window.location.hash.substr(1));
     
-    console.log("You are on page" + cursor + " with score = " + currentScore);
+        console.log("You are on page" + cursor + " with tally = ");
+        console.log( tally);
     
         
         $("button").on("click", function(){            
             var score = $("input[name=answers]:checked").val()
             console.log("score = " + score);
-            // alert("the value that you selected was: " + score)
-
-        
+            var categories = score.split(",");
+//            console.log("tally before most recent additions")
+//            console.log(tally)
+            for( var i=0; i < categories.length; i++) {
+                tally[categories[i]]++;
+            }
+//            console.log("tally after most recent additions")
+//            console.log(tally);
             
-            tally[score]++;
+            // sometimes the value of the radio button will have
+            // more than one value separated by comma
+            
+            
+            var nextPage = quiz[cursor].nextPage;
+            
+//            tally[score]++;
             // THIS IS NASTAY!!!
             var currentTallyAsString = [tally.mango,
                                         tally.pomegranate,
                                         tally.grape,
                                         tally.dragonfruit].join(",")
 
-            //var url = nextPage + "#" + currentTallyAsString;
+            var url = nextPage + "#" + currentTallyAsString;
 
             //go to the next page BUT
             // with a hashCode that has the score
-            
-            // document.location = url;
-            
-
-            
+//            console.log(url);
+             document.location = url;
         })
 
         function getTotalScore() {
